@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f7;
+  --foreground: #302931;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,8 +14,56 @@
   }
 }
 
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.social-media a {
+  font-size: 0.8rem;
+}
+
+/* Menu */
+nav  {
+  background-color: #f5f5f7; /* Couleur de fond (gris clair) */
+  color: #323232; /* Couleur du texte */
+  padding: 20px; /* Espacement interne */
+  font-size: 11px; /* Taille de la police réduite */
+}
+
+.submenu {
+  background-color: #f5f5f7; /* Couleur de fond (gris clair) */
+  color: #323232; /* Couleur du texte */
+  padding: 10px; /* Espacement interne */
+  font-size: 11px; /* Taille de la police réduite */
+  z-index: 10; /* Z-index pour que le menu soit au-dessus des autres éléments */
+}
+
+/* Footer */
+
+footer {
+  background-color: #1a202c; /* Couleur de fond (gris foncé) */
+  color: #a19e9e; /* Couleur du texte */
+  padding: 20px; /* Espacement interne */
+  font-size: 11px; /* Taille de la police réduite */
+}
+
+footer h4 {
+  margin-bottom: 10px; /* Espacement sous les titres */
+}
+
+footer a {
+  color: #63b3ed; /* Couleur des liens */
+  transition: color 0.3s; /* Transition pour un effet au survol */
+}
+
+footer a:hover {
+  color: #90cdf4; /* Couleur des liens au survol */
 }
