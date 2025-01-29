@@ -86,18 +86,15 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="social-media1">
-            <h4 className="font-bold">Réseaux Sociaux</h4>
+            <h4 className="font-bold">Autres Réseaux Sociaux</h4>
             <a href="https://www.instagram.com/rcabasketwomen/" className="block">
               Instagram Féminin
             </a>
             <a href="https://www.instagram.com/rcabasketacademy/" className="block">
               Instagram Academie
             </a>
-            <a href="https://instagram.com/rajaathleticclub" className="block">
-              Instagram
-            </a>
             <a href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d" className="block">
-              Instagram
+              Facebook
             </a>
           </div>
         
