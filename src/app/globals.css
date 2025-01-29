@@ -23,7 +23,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family:San Francisco, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .social-media a {

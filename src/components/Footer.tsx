@@ -33,6 +33,18 @@ const Footer: React.FC = () => {
             <a href="/terms" className="block">
               Conditions d'utilisation
             </a>
+            <a href="/sitemap" className="block">
+              Carte du site
+            </a>
+            <a href="/faq" className="block">
+              FAQ
+            </a>
+            <a href="/conditions-generales" className="block">
+              Conditions génerales d'utilisation
+            </a>
+            <a href="/cookies" className="block">
+              politique des cookies
+            </a>
           </div>
           <div className="contact-info">
             <h4 className="font-bold">Contact</h4>

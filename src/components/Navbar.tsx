@@ -220,9 +220,6 @@ const Navbar: React.FC = () => {
                 <a href="#" className="block px-4 py-2  ">
                   Les partenaires
                 </a>
-                <a href="#" className="block px-4 py-2  ">
-                  Les partenaires potentiels
-                </a>
               </div>
             )}
           </div>
