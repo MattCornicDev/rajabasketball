@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           {/* Ajoutez d'autres logos selon vos besoins */}
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       <div className="newsletter bg-gray-900 p-1 rounded-md">
           <h4 className="text-md mb-2">Inscrivez-vous à notre newsletter</h4>
           <div className="flex">
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               placeholder="Votre email"
               className="flex-grow p-2 bg-gray-500 border border-gray-500 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-5 placeholder-white"
             />
-            <button className="bg-gray-900 flex items-center justify-center h-5 px-4 rounded-r-md hover:bg-gray-600">
+            <button className="bg-gray-800 flex items-center justify-center h-5 px-4 rounded-r-md hover:bg-gray-600">
               Inscription
             </button>
           </div>
@@ -60,8 +60,13 @@ const Footer: React.FC = () => {
 
         <div className="contact-info">
           <h4 className="font-bold">Contact</h4>
-          <p>Contactez-nous : +212(0)528 71 71 71</p>
-          <p>Email : contact@rajaathleticclub.com</p>
+          <p><span className="font-bold">Contactez-nous :</span> +212 (0)658-618726</p>
+          <p><span className="font-bold">Email :</span> contact@rajaathleticclub.com</p>
+          <p><span className="font-bold">Siège :</span> Complexe Sportif Raja-Oasis <br />
+        Rue Omar El Khayam (anciennement Mermoz) <br />
+        Oasis, BP 8094 <br />
+        Casablanca 21121 <br />
+        Maroc</p>
         </div>
         
         <div className="events">
@@ -80,39 +85,25 @@ const Footer: React.FC = () => {
             Résultats des matchs
           </a>
         </div>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/rcabasketofficiel/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa fa-instagram"></i>
-          </a>
-          <a
-            href="https://x.com/RcaBasket"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa fa-twitter"></i>
-          </a>
-          <a
-            href="https://www.youtube.com/@Rcabasket"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa fa-youtube"></i>
-          </a>
-        </div>
+        <div className="social-media1">
+            <h4 className="font-bold">Réseaux Sociaux</h4>
+            <a href="https://www.instagram.com/rcabasketwomen/" className="block">
+              Instagram Féminin
+            </a>
+            <a href="https://www.instagram.com/rcabasketacademy/" className="block">
+              Instagram Academie
+            </a>
+            <a href="https://instagram.com/rajaathleticclub" className="block">
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d" className="block">
+              Instagram
+            </a>
+          </div>
+        
       </div>
 
-      <div className="flex justify-center m-10">
+      <div className="flex justify-center m-5">
         <img src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
       </div>
 
