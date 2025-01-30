@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         <div className="block md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            className=" focus:outline-none"
           >
             {isOpen ? "✖" : "☰"}
           </button>
