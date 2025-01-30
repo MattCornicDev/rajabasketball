@@ -1,4 +1,25 @@
+import PromoCard from "@/components/PromoCard";
+import VideoCard from "@/components/VideoCard";
+import Aside from "@/components/Aside";
+
 const Page: React.FC = () => {
+  const promotions = [
+    {
+      imageUrl: "/photos/promotions/majestee-pub.png",
+    },
+    {
+      imageUrl: "/photos/promotions/majestee-pub.png",
+    },
+  ];
+  const videos = [
+    {
+      iframeUrl:
+        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+      title: "Vidéo d'entrainement",
+      description: "Description de la vidéo d'entrainement",
+    },
+  ];
+
   return (
     <div>
       <div className="container">
@@ -33,18 +54,70 @@ const Page: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-4 mt-10">
-        <h3 className="text-lg font-bold mb-2">Publicité</h3>
-        <p className="mb-4">Découvrez nos offres spéciales !</p>
-        <img
-          src="/path/to/ad-image.jpg"
-          alt="Publicité"
-          className="w-full h-auto rounded-md"
-        />
-        <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">
-          En savoir plus
-        </button>
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-2 justify-items-center">
+        {promotions.map((promo, index) => (
+          <PromoCard key={index} imageUrl={promo.imageUrl} />
+        ))}
       </div>
+
+      <section className="m-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 justify-items-center">
+        <div className="video-card">
+          {videos.map((video, index) => (
+            <VideoCard
+              key={index}
+              iframeUrl={video.iframeUrl}
+              title={video.title}
+              description={video.description}
+            />
+          ))}
+        </div>
+        <div className="">
+          {videos.map((video, index) => (
+            <VideoCard
+              key={index}
+              iframeUrl={video.iframeUrl}
+              title={video.title}
+              description={video.description}
+            />
+          ))}
+        </div>
+        <div className="">
+          {videos.map((video, index) => (
+            <VideoCard
+              key={index}
+              iframeUrl={video.iframeUrl}
+              title={video.title}
+              description={video.description}
+            />
+          ))}
+        </div>
+        <div className="">
+          {videos.map((video, index) => (
+            <VideoCard
+              key={index}
+              iframeUrl={video.iframeUrl}
+              title={video.title}
+              description={video.description}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-green-500 text-white p-4 text-center">
+  <h2 className="text-xl font-bold">Annonce Importante</h2>
+  <p>Ne manquez pas notre événement ce week-end !</p>
+</section>
+<div className="flex">
+  <main className="flex-1">
+    {/* Contenu principal ici */}
+  </main>
+  <aside className="w-1/4 bg-yellow-500 text-black p-4">
+    <h2 className="text-xl font-bold">Nouveau Produit !</h2>
+    <p>Découvrez notre dernière collection.</p>
+  </aside>
+</div>
+<Aside />
+
     </div>
   );
 };

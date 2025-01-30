@@ -7,12 +7,14 @@
   --foreground: #302931;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+  */
 
 *{
   margin: 0;
@@ -112,6 +114,11 @@ nav  {
   to {
     transform: rotateY(-360deg);
   }
+}
+
+/* Cards */
+.video-card {
+  color: red;
 }
 
 
