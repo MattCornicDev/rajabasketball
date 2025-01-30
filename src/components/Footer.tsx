@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           {/* Ajoutez d'autres logos selon vos besoins */}
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       <div className="newsletter bg-gray-900 p-1 rounded-md">
           <h4 className="text-md mb-2">Inscrivez-vous à notre newsletter</h4>
           <div className="flex">
@@ -60,7 +60,10 @@ const Footer: React.FC = () => {
 
         <div className="contact-info">
           <h4 className="font-bold">Contact</h4>
-          <p><span className="font-bold">Contactez-nous :</span> +212 (0)658-618726</p>
+          <p>
+  <span className="font-bold">Contactez-nous :</span> 
+  <a href="tel:+2120658618726">{"+212 (0)658-618726"}</a>
+</p>
           <p><span className="font-bold">Email :</span> contact@rajaathleticclub.com</p>
           <p><span className="font-bold">Siège :</span> Complexe Sportif Raja-Oasis <br />
         Rue Omar El Khayam (anciennement Mermoz) <br />
@@ -104,7 +107,7 @@ const Footer: React.FC = () => {
         <img src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
       </div>
 
-      <div className="social-media container mx-auto text-center mt-4">
+      <div className="social-media mx-auto text-center mt-4">
         <div className="flex justify-center space-x-4">
           <a
             href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d"
