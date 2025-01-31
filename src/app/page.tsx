@@ -96,9 +96,8 @@ const Page: React.FC = () => {
 
       <section className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center mt-20">
         {videos.map((video, index) => (
-          <div className="video-card">
+          <div className="video-card" key={index}>
             <VideoCard
-              key={index}
               iframeUrl={video.iframeUrl}
               title={video.title}
               date={video.date}
@@ -132,8 +131,9 @@ const Page: React.FC = () => {
         </aside>
         <aside className="w-full sm:w-3/4 p-4 m-0 sm:mt-0 sm:ml-0">
           {/* Exemple d'utilisation de ArticleCard */}
-          {articles.map((article) => (
+          {articles.map((article, index) => (
             <ArticleCard
+              key={index}
               title={article.title}
               description={article.description}
               linkText={article.linkText}
