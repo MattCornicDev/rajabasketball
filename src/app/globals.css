@@ -158,6 +158,21 @@ nav  {
   align-items: center;
 }
 
+.title-article {
+  color: red;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.description-article {
+  display: flex;
+  align-items: center;
+}
+.link-article {
+  color: #63b3ed; /* Couleur des liens */
+  text-decoration: none; /* Supprime la ligne sous les liens */
+  font-size: 11px; /* Taille de la police réduite */
+}
+
 
 /* Footer */
 

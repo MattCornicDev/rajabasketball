@@ -40,14 +40,14 @@ const Page: React.FC = () => {
   ];
   const articles = [
     {
-      title: "Article 1",
-      description: "Description de l'article 1.",
+      title: "Hisoire du club",
+      description: "Le Raja Club Athletic, fondé en 1949 à Casablanca, est l'un des clubs de football les plus emblématiques du Maroc et d'Afrique...",
       linkText: "Lire la suite",
       linkHref: "#",
     },
     {
-      title: "Article 2",
-      description: "Description de l'article 2.",
+      title: "Du nouveau dans la vie sportive",
+      description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
       linkText: "Lire la suite",
       linkHref: "#",
     },
@@ -114,19 +114,21 @@ const Page: React.FC = () => {
       <div className="aside flex flex-col sm:flex-row">
         <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-4">
           <AsideCard
-            title="Liens Connexes"
-            content="Découvrez nos articles connexes."
-            linkText="Article 1"
+            title="Nouvel équipement"
+            content="Découvrez nos articles."
+            linkText="Equipementier Majestee"
             linkHref="#"
+            imageUrl="/photos/equipements/veste-raja.jpeg"
           />
           <AsideCard
             title="Publicité"
-            content="Découvrez notre dernière offre !"
+            content="Pour la journée de l'indépendances !"
             linkText="En savoir plus"
             linkHref="#"
+            imageUrl="/photos/exemple.jpg"
           />
         </aside>
-        <aside className="w-full sm:w-3/4 p-4 mt-4 sm:mt-0 sm:ml-4">
+        <aside className="w-full sm:w-3/4 p-4 m-4 sm:mt-0 sm:ml-4">
           {/* Exemple d'utilisation de ArticleCard */}
           {articles.map((article, index) => (
             <ArticleCard

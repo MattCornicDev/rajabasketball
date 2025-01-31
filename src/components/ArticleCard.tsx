@@ -11,9 +11,9 @@ interface ArticleCardProps {
 const ArticleCard: React.FC<ArticleCardProps> = ({ title, description, linkText, linkHref }) => {
     return (
         <div className="article-card">
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <a href={linkHref} className="link">
+            <h3 className="title-article">{title}</h3>
+            <p className="description-article">{description}</p>
+            <a href={linkHref} className="link-article">
                 {linkText}
             </a>
         </div>

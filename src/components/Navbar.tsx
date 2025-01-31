@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
               Accueil
             </a>
             {isSubMenuHomeOpen && (
-              <div className="submenu absolute left-0mt-2 rounded shadow-lg z-10">
+              <div className="submenu absolute left-10 top-full mt-2 rounded shadow-lg z-10">
                 <a href="#" className="block px-4 py-2">
                   Actualités
                 </a>
