@@ -9,21 +9,19 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, description }) => {
   return (
-    <div className="border-4 border-gray-300 shadow-lg p-4 ">
-      <div className="video-card w-full h-auto">
-        <iframe
-          width="100%"
-          height="auto"
-          src={iframeUrl}
-          title={title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <h3 className="font-bold mt-2">{title}</h3>
-      <p className="mt-1">{description}</p>
-    </div> 
+    <div className="shadow-lg rounded-sm flex flex-col items-center">
+  <div className="video-card w-full">
+    <iframe
+      className="w-full h-auto"
+      src={iframeUrl}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+  <h3 className="font-bold">{title}</h3>
+  <p className="">{description}</p>
+</div>
   );
 };
 

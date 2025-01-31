@@ -1,6 +1,7 @@
 import PromoCard from "@/components/PromoCard";
 import VideoCard from "@/components/VideoCard";
-import Aside from "@/components/Aside";
+import AsideCard from "@/components/AsideCard";
+import ArticleCard from "@/components/ArticleCard";
 
 const Page: React.FC = () => {
   const promotions = [
@@ -12,6 +13,24 @@ const Page: React.FC = () => {
     },
   ];
   const videos = [
+    {
+      iframeUrl:
+        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+      title: "Vidéo d'entrainement",
+      description: "Description de la vidéo d'entrainement",
+    },
+    {
+      iframeUrl:
+        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+      title: "Vidéo d'entrainement",
+      description: "Description de la vidéo d'entrainement",
+    },
+    {
+      iframeUrl:
+        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+      title: "Vidéo d'entrainement",
+      description: "Description de la vidéo d'entrainement",
+    },
     {
       iframeUrl:
         "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
@@ -52,72 +71,63 @@ const Page: React.FC = () => {
             <span>Woow</span>
           </div>
         </div>
+        <img
+          src="/photos/casa-city-finance.png"
+          alt="Description of the image"
+          className="mobile-image"
+          style={{ display: "none" }} // Initially hidden
+        />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-2 justify-items-center">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-items-center">
         {promotions.map((promo, index) => (
           <PromoCard key={index} imageUrl={promo.imageUrl} />
         ))}
       </div>
 
-      <section className="m-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 justify-items-center">
-        <div className="video-card">
-          {videos.map((video, index) => (
-            <VideoCard
-              key={index}
-              iframeUrl={video.iframeUrl}
-              title={video.title}
-              description={video.description}
-            />
-          ))}
-        </div>
-        <div className="">
-          {videos.map((video, index) => (
-            <VideoCard
-              key={index}
-              iframeUrl={video.iframeUrl}
-              title={video.title}
-              description={video.description}
-            />
-          ))}
-        </div>
-        <div className="">
-          {videos.map((video, index) => (
-            <VideoCard
-              key={index}
-              iframeUrl={video.iframeUrl}
-              title={video.title}
-              description={video.description}
-            />
-          ))}
-        </div>
-        <div className="">
-          {videos.map((video, index) => (
-            <VideoCard
-              key={index}
-              iframeUrl={video.iframeUrl}
-              title={video.title}
-              description={video.description}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-green-500 text-white p-4 text-center">
-  <h2 className="text-xl font-bold">Annonce Importante</h2>
-  <p>Ne manquez pas notre événement ce week-end !</p>
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+  {videos.map((video, index) => (
+    <div className="video-card" key={index}>
+      <VideoCard
+        iframeUrl={video.iframeUrl}
+        title={video.title}
+        description={video.description}
+      />
+    </div>
+  ))}
 </section>
-<div className="flex">
-  <main className="flex-1">
-    {/* Contenu principal ici */}
-  </main>
-  <aside className="w-1/4 bg-yellow-500 text-black p-4">
-    <h2 className="text-xl font-bold">Nouveau Produit !</h2>
-    <p>Découvrez notre dernière collection.</p>
-  </aside>
-</div>
-<Aside />
 
+      
+      <div className="aside flex flex-col sm:flex-row">
+        <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-4">
+          <AsideCard
+            title="Liens Connexes"
+            content="Découvrez nos articles connexes."
+            linkText="Article 1"
+            linkHref="#"
+          />
+          <AsideCard
+            title="Publicité"
+            content="Découvrez notre dernière offre !"
+            linkText="En savoir plus"
+            linkHref="#"
+          />
+          {/* Example ArticleCard usage */}
+          <ArticleCard
+            title="Article Title"
+            description="A brief description of the article."
+            linkText="Read more"
+            linkHref="https://example.com/article"
+          />
+          {/* Example ArticleCard usage */}
+          <ArticleCard
+            title="Article Title"
+            description="A brief description of the article."
+            linkText="Read more"
+            linkHref="https://example.com/article"
+          />
+        </aside>
+      </div>
     </div>
   );
 };
