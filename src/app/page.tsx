@@ -55,7 +55,7 @@ const Page: React.FC = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="carousel mt-20">
           <div className="carousel__face ">
             <span>Site en construction</span>
@@ -112,7 +112,7 @@ const Page: React.FC = () => {
       </div>
 
       <div className="aside flex flex-col sm:flex-row">
-        <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-4">
+        <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-0">
           <AsideCard
             title="Nouvel équipement"
             content="Découvrez nos articles."
@@ -128,7 +128,7 @@ const Page: React.FC = () => {
             imageUrl="/photos/exemple.jpg"
           />
         </aside>
-        <aside className="w-full sm:w-3/4 p-4 m-4 sm:mt-0 sm:ml-4">
+        <aside className="w-full sm:w-3/4 p-4 m-0 sm:mt-0 sm:ml-0">
           {/* Exemple d'utilisation de ArticleCard */}
           {articles.map((article, index) => (
             <ArticleCard
