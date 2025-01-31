@@ -19,17 +19,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="p-1">
-      <div className="flex justify-center items-center">
-        <div className="logo">
-          <img src="./logo-raja.svg" alt="logo raja athletic" width={50} />
-        </div>
+      <div className="flex">
         <div className="block md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className=" focus:outline-none"
+            className="flex justify-start focus:outline-none text-3xl"
           >
             {isOpen ? "✖" : "☰"}
           </button>
+        </div>
+        <div className="logo flex justify-center flex-grow">
+          <img src="./logo-raja.svg" alt="logo raja athletic" width={50} />
         </div>
         <div className={`md:flex ${isOpen ? "block" : "hidden"}`}>
           {/* Sous-menu Accueil */}
@@ -300,7 +300,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
          {/* Lien de Connexion */}
-      <div className="relative">
+      <div className="relative flex justify-end">
         <a
           href="/login"
           className="px-4 py-2 flex items-center"
