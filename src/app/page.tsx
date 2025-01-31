@@ -17,25 +17,39 @@ const Page: React.FC = () => {
       iframeUrl:
         "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
       title: "Vidéo d'entrainement",
-      description: "Description de la vidéo d'entrainement",
+      date: "20 janvier 2024",
     },
     {
       iframeUrl:
-        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+        "https://www.youtube.com/embed/OiZBstutEWc?si=sm_BTC7D7ZKLMEjB",
       title: "Vidéo d'entrainement",
-      description: "Description de la vidéo d'entrainement",
+      date: "20 janvier 2024",
     },
     {
       iframeUrl:
-        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+        "https://www.youtube.com/embed/IzytUXV7Nhg?si=YKK6FowCDqgope87",
       title: "Vidéo d'entrainement",
-      description: "Description de la vidéo d'entrainement",
+      date: "20 janvier 2024",
     },
     {
       iframeUrl:
-        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
+        "https://www.youtube.com/embed/e50HuSxlp8A?si=NAo475OtXDLV_4OL",
       title: "Vidéo d'entrainement",
-      description: "Description de la vidéo d'entrainement",
+      date: "20 janvier 2024",
+    },
+  ];
+  const articles = [
+    {
+      title: "Article 1",
+      description: "Description de l'article 1.",
+      linkText: "Lire la suite",
+      linkHref: "#",
+    },
+    {
+      title: "Article 2",
+      description: "Description de l'article 2.",
+      linkText: "Lire la suite",
+      linkHref: "#",
     },
   ];
 
@@ -79,25 +93,24 @@ const Page: React.FC = () => {
         />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-items-center">
+      <section className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center mt-20">
+        {videos.map((video, index) => (
+          <div className="video-card" key={index}>
+            <VideoCard
+              iframeUrl={video.iframeUrl}
+              title={video.title}
+              date={video.date}
+            />
+          </div>
+        ))}
+      </section>
+
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
         {promotions.map((promo, index) => (
           <PromoCard key={index} imageUrl={promo.imageUrl} />
         ))}
       </div>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
-  {videos.map((video, index) => (
-    <div className="video-card" key={index}>
-      <VideoCard
-        iframeUrl={video.iframeUrl}
-        title={video.title}
-        description={video.description}
-      />
-    </div>
-  ))}
-</section>
-
-      
       <div className="aside flex flex-col sm:flex-row">
         <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-4">
           <AsideCard
@@ -112,20 +125,17 @@ const Page: React.FC = () => {
             linkText="En savoir plus"
             linkHref="#"
           />
-          {/* Example ArticleCard usage */}
-          <ArticleCard
-            title="Article Title"
-            description="A brief description of the article."
-            linkText="Read more"
-            linkHref="https://example.com/article"
-          />
-          {/* Example ArticleCard usage */}
-          <ArticleCard
-            title="Article Title"
-            description="A brief description of the article."
-            linkText="Read more"
-            linkHref="https://example.com/article"
-          />
+        </aside>
+        <aside className="w-full sm:w-3/4 p-4 mt-4 sm:mt-0 sm:ml-4">
+          {/* Exemple d'utilisation de ArticleCard */}
+          {articles.map((article, index) => (
+            <ArticleCard
+              title={article.title}
+              description={article.description}
+              linkText={article.linkText}
+              linkHref={article.linkHref}
+            />
+          ))}
         </aside>
       </div>
     </div>

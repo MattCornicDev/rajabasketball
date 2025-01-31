@@ -1,27 +1,29 @@
 // src/components/VideoCard.tsx
-import React from 'react';
+import React from "react";
 
 interface VideoCardProps {
   iframeUrl: string;
   title: string;
-  description: string;
+  date: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, description }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, date }) => {
   return (
-    <div className="shadow-lg rounded-sm flex flex-col items-center">
-  <div className="video-card w-full">
-    <iframe
-      className="w-full h-auto"
-      src={iframeUrl}
-      title={title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-  </div>
-  <h3 className="font-bold">{title}</h3>
-  <p className="">{description}</p>
-</div>
+    <div className="rounded-sm flex flex-col">
+      <div className="video-card w-full">
+        <iframe
+          className="w-full h-auto"
+          src={iframeUrl}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className="disposition-card">
+        <h3 className="title-card">{title} </h3>
+        <p className="date-card"> | {date}</p>
+      </div>
+    </div>
   );
 };
 
