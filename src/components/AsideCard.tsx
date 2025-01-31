@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface AsideCardProps {
   title: string;
@@ -17,7 +18,7 @@ const AsideCard: React.FC<AsideCardProps> = ({
 }) => {
   return (
     <div className="bg-gray-900 text-white p-4 rounded-lg shadow-md mb-4">
-      {imageUrl && <img src={imageUrl} alt={title} className="mb-2 rounded" />}{" "}
+      {imageUrl && <Image src={imageUrl} alt={title} className="mb-2 rounded" />}{" "}
       {/* Ajoutez l'image ici */}
       <h2 className="text-xl font-bold">{title}</h2>
       <p>{content}</p>

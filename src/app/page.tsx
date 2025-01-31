@@ -2,6 +2,7 @@ import PromoCard from "@/components/PromoCard";
 import VideoCard from "@/components/VideoCard";
 import AsideCard from "@/components/AsideCard";
 import ArticleCard from "@/components/ArticleCard";
+import Image from "next/image";
 
 const Page: React.FC = () => {
   const promotions = [
@@ -85,7 +86,7 @@ const Page: React.FC = () => {
             <span>Woow</span>
           </div>
         </div>
-        <img
+        <Image
           src="/photos/casa-city-finance.png"
           alt="Description of the image"
           className="mobile-image"
@@ -130,7 +131,7 @@ const Page: React.FC = () => {
         </aside>
         <aside className="w-full sm:w-3/4 p-4 m-0 sm:mt-0 sm:ml-0">
           {/* Exemple d'utilisation de ArticleCard */}
-          {articles.map((article, index) => (
+          {articles.map((article) => (
             <ArticleCard
               title={article.title}
               description={article.description}

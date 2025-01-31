@@ -1,16 +1,17 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 py-4">
       <div className="sponsor-logo bg-gray-900 py-10">
         <div className="flex justify-center space-x-4">
-          <img
+          <Image
             src="/photos/sponsors/logo-infinicode.svg"
             alt="Sponsor infinicode"
             className="h-6"
           />
-          <img
+          <Image
             src="/photos/sponsors/majestee.png"
             alt="Sponsor majestee"
             className="h-6"
@@ -42,7 +43,7 @@ const Footer: React.FC = () => {
             Politique de confidentialité
           </a>
           <a href="/terms" className="block">
-            Conditions d'utilisation
+            Conditions d&apos;utilisation
           </a>
           <a href="/sitemap" className="block">
             Carte du site
@@ -51,7 +52,7 @@ const Footer: React.FC = () => {
             FAQ
           </a>
           <a href="/conditions-generales" className="block">
-            Conditions génerales d'utilisation
+            Conditions génerales d&apos;utilisation
           </a>
           <a href="/cookies" className="block">
             politique des cookies
@@ -104,7 +105,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex justify-center m-5">
-        <img src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
+        <Image src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
       </div>
 
       <div className="social-media mx-auto text-center mt-4">
