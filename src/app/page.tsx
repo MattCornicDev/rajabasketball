@@ -11,7 +11,7 @@ const Page: React.FC = () => {
       imageUrl: "/photos/promotions/majestee-pub.png",
     },
     {
-      imageUrl: "/photos/promotions/majestee-pub.png",
+      imageUrl: "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt4b127dc0b6a439cd/66a1fed0b8ec6f488560926f/1180_442_(1).png?auto=webp&width=1280&disable=upscale&dpr=2",
     },
   ];
   const videos = [
@@ -43,12 +43,21 @@ const Page: React.FC = () => {
   const articles = [
     {
       title: "Hisoire du club",
+      imageUrl: "https://scontent-cdg4-3.xx.fbcdn.net/v/t39.30808-6/441953200_1010712144273916_684655740528958862_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mNbXZoSi3bQQ7kNvgHQwzQ-&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=AiYnQ4JWrR736mXiN_jW4ce&oh=00_AYBT3C7fNEUy5bY029ICe-4fjxg6Fdg2OxvzA7FWBhwZng&oe=67A6C916",
       description: "Le Raja Club Athletic, fondé en 1949 à Casablanca, est l'un des clubs de football les plus emblématiques du Maroc et d'Afrique...",
       linkText: "Lire la suite",
       linkHref: "#",
     },
     {
       title: "Du nouveau dans la vie sportive",
+      imageUrl: "https://scontent-cdg4-3.xx.fbcdn.net/v/t1.6435-9/130978795_2213767175433526_2092208791089888399_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vIZiG2ASJkwQ7kNvgF6YfvY&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=AkmjQvhBbd9sX9ZhdpUF6zY&oh=00_AYA8UnUJc-3ny-IpP0D9bqjMLlFksRANdofXU8oUBJSRsQ&oe=67C87958",
+      description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
+      linkText: "Lire la suite",
+      linkHref: "#",
+    },
+    {
+      title: "Du nouveau dans la vie sportive",
+      imageUrl: "/photos/photo-athlete.png",
       description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
       linkText: "Lire la suite",
       linkHref: "#",
@@ -59,32 +68,32 @@ const Page: React.FC = () => {
     <div>
       <div className="container mx-auto">
         <div className="carousel mt-20">
-          <div className="carousel__face ">
-            <span>Site en construction</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">Site en construction</span>
           </div>
-          <div className="carousel__face">
-            <span>Very special</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">Very special</span>
           </div>
-          <div className="carousel__face">
-            <span>Special is the key</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">Special is the key</span>
           </div>
-          <div className="carousel__face">
-            <span>For you</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">For you</span>
           </div>
-          <div className="carousel__face">
-            <span>Just give it</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">Just give it</span>
           </div>
-          <div className="carousel__face">
-            <span>A try</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">A try</span>
           </div>
-          <div className="carousel__face">
-            <span>And see</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">And see</span>
           </div>
-          <div className="carousel__face">
-            <span>How IT Works</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">How IT Works</span>
           </div>
-          <div className="carousel__face">
-            <span>Woow</span>
+          <div className="carousel__face rounded-sm">
+            <span className="title-carousel text-black -mt-5">Woow</span>
           </div>
         </div>
         <Image
@@ -137,6 +146,7 @@ const Page: React.FC = () => {
           {articles.map((article, index) => (
             <ArticleCard
               title={article.title}
+              imageUrl={article.imageUrl}
               description={article.description}
               linkText={article.linkText}
               linkHref={article.linkHref}

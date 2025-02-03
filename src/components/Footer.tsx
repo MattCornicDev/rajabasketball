@@ -11,22 +11,22 @@ const Footer: React.FC = () => {
       src="/photos/sponsors/logo-infinicode.svg"
       alt="Sponsor infinicode"
       className="partenaire w-1/4 sm:w-1/6 md:w-1/5" // Ajustez les largeurs selon vos besoins
-      width={200} 
-      height={Math.round(200 * (300) / 500)} 
+      width={150} 
+      height={50} 
     />
     <Image
       src="/photos/sponsors/majestee.png"
       alt="Sponsor majestee"
       className="partenaire w-1/4 sm:w-1/6 md:w-1/5"
-      width={300} 
-      height={Math.round(500 * (300) / 500)} 
+      width={200} 
+      height={100} 
     />
     <Image
       src="/photos/sponsors/logo-school.jpeg"
       alt="Sponsor school"
       className="partenaire w-1/4 sm:w-1/6 md:w-1/5"
       width={300} 
-      height={Math.round(500 * (300) / 500)} 
+      height={200} 
     />
     {/* Ajoutez d'autres logos selon vos besoins */}
   </div>
