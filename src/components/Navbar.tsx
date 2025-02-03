@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from 'next/image'; // Ajoutez cette ligne
 
 type SubMenuKeys = 'home' | 'boutique' | 'calendrier' | 'equipe' | 'actualites' | 'galerie' | 'billeterie' | 'partenaires' | 'fanZone' | 'aPropos' | 'contact';
 
@@ -36,7 +37,12 @@ const Navbar: React.FC = () => {
           </button>
         </div>
         <div className="logo flex justify-center flex-grow">
-          <img src="./logo-raja.svg" alt="logo raja athletic" width={50} />
+          <Image 
+            src="./logo-raja.svg" 
+            alt="logo raja athletic" 
+            width={70} // Ajustez la largeur selon vos besoins
+            height={70} // Ajustez la hauteur selon vos besoins
+          />
         </div>
         <div className={`md:flex ${isOpen ? "block" : "hidden"}`}>
           {[

@@ -1,7 +1,9 @@
+import React from 'react';
 import PromoCard from "@/components/PromoCard";
 import VideoCard from "@/components/VideoCard";
 import AsideCard from "@/components/AsideCard";
 import ArticleCard from "@/components/ArticleCard";
+import Image from 'next/image'; 
 
 const Page: React.FC = () => {
   const promotions = [
@@ -85,11 +87,13 @@ const Page: React.FC = () => {
             <span>Woow</span>
           </div>
         </div>
-        <img
-          src="/photos/casa-city-finance.png"
-          alt="Description of the image"
+        <Image
+          src="/photos/casa-city-finance.png" 
+          alt="Description de l'image"
+          width={300} 
+          height={200}
           className="mobile-image"
-          style={{ display: "none" }} // Initially hidden
+          style={{ display: "none" }}
         />
       </div>
 
