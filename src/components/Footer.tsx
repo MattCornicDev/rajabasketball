@@ -1,26 +1,63 @@
 import React from "react";
+<<<<<<< HEAD
 import Image from "next/image";
+=======
+import Image from 'next/image'; // Ajoutez cette ligne
+>>>>>>> dev
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 py-4">
       <div className="sponsor-logo bg-gray-900 py-10">
+<<<<<<< HEAD
         <div className="flex justify-center space-x-4">
+=======
+        <div className="flex justify-center space-x-2 flex-wrap">
+>>>>>>> dev
           <Image
             src="/photos/sponsors/logo-infinicode.svg"
             alt="Sponsor infinicode"
-            className="h-6"
+            className="partenaire w-1/4 sm:w-1/6 md:w-1/5 max-w-[200px]" // Ajustez les largeurs selon vos besoins
+            width={150}
+            height={50}
           />
           <Image
             src="/photos/sponsors/majestee.png"
             alt="Sponsor majestee"
-            className="h-6"
+            className="partenaire w-1/4 sm:w-1/6 md:w-1/5 max-w-[300px]"
+            width={200}
+            height={100}
+          />
+          <Image
+            src="/photos/sponsors/logo-school.jpeg"
+            alt="Sponsor school"
+            className="partenaire w-1/4 sm:w-1/6 md:w-1/5 max-w-[300px]"
+            width={300}
+            height={200}
           />
           {/* Ajoutez d'autres logos selon vos besoins */}
         </div>
+        <div className="flex justify-center">
+        <div className="flex justify-center m-5">
+          <Image
+            src="/Armoiries-du-Maroc.png"
+            alt="logo Armoiries du Maroc"
+            width={100}
+            height={50}
+          />
+        </div>
+        <div className="flex justify-center m-5">
+          <Image
+            src="photos/sponsors/Casablanca.svg"
+            alt="logo Casablanca"
+            width={100}
+            height={50}
+          />
+        </div>
+        </div>
       </div>
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div className="newsletter bg-gray-900 p-1 rounded-md">
+        <div className="newsletter bg-gray-900 p-1 rounded-md">
           <h4 className="text-md mb-2">Inscrivez-vous à notre newsletter</h4>
           <div className="flex">
             <input
@@ -55,24 +92,30 @@ const Footer: React.FC = () => {
             Conditions génerales d&apos;utilisation
           </a>
           <a href="/cookies" className="block">
-            politique des cookies
+            Politique des cookies
           </a>
         </div>
 
         <div className="contact-info">
           <h4 className="font-bold">Contact</h4>
           <p>
-  <span className="font-bold">Contactez-nous :</span> 
-  <a href="tel:+2120658618726">{"+212 (0)658-618726"}</a>
-</p>
-          <p><span className="font-bold">Email :</span> contact@rajaathleticclub.com</p>
-          <p><span className="font-bold">Siège :</span> Complexe Sportif Raja-Oasis <br />
-        Rue Omar El Khayam (anciennement Mermoz) <br />
-        Oasis, BP 8094 <br />
-        Casablanca 21121 <br />
-        Maroc</p>
+            <span className="font-bold">Contactez-nous :</span>
+            <a href="tel:+2120658618726">{"+212 (0)658-618726"}</a>
+          </p>
+          <p>
+            <span className="font-bold">Email :</span>{" "}
+            contact@rajaathleticclub.com
+          </p>
+          <p>
+            <span className="font-bold">Siège :</span> Complexe Sportif
+            Raja-Oasis <br />
+            Rue Omar El Khayam (anciennement Mermoz) <br />
+            Oasis, BP 8094 <br />
+            Casablanca 21121 <br />
+            Maroc
+          </p>
         </div>
-        
+
         <div className="events">
           <h4 className="font-bold">Événements à venir</h4>
           <ul>
@@ -90,22 +133,36 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="social-media1">
-            <h4 className="font-bold">Autres Réseaux Sociaux</h4>
-            <a href="https://www.instagram.com/rcabasketwomen/" className="block">
-              Instagram Féminin
-            </a>
-            <a href="https://www.instagram.com/rcabasketacademy/" className="block">
-              Instagram Academie
-            </a>
-            <a href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d" className="block">
-              Facebook
-            </a>
-          </div>
-        
+          <h4 className="font-bold">Autres Réseaux Sociaux</h4>
+          <a href="https://www.instagram.com/rcabasketwomen/" className="block">
+            Instagram Féminin
+          </a>
+          <a
+            href="https://www.instagram.com/rcabasketacademy/"
+            className="block"
+          >
+            Instagram Academie
+          </a>
+          <a
+            href="https://www.facebook.com/RcaBasketyouth?mibextid=LQQJ4d"
+            className="block"
+          >
+            Facebook
+          </a>
+        </div>
       </div>
 
       <div className="flex justify-center m-5">
+<<<<<<< HEAD
         <Image src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
+=======
+        <Image
+          src="/logo-raja-white.svg"
+          alt="logo raja athletic"
+          width={200}
+          height={100}
+        />
+>>>>>>> dev
       </div>
 
       <div className="social-media mx-auto text-center mt-4">

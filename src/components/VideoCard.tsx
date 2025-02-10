@@ -12,7 +12,9 @@ const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, date }) => {
     <div className="rounded-sm flex flex-col">
       <div className="video-card w-full">
         <iframe
-          className="w-full h-auto"
+        width="350"
+         height="180"
+          className=""
           src={iframeUrl}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

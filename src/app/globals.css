@@ -67,6 +67,17 @@ nav  {
   transform-style: preserve-3d; 
   animation: rotate360 60s infinite forwards linear;
 }
+.title-carousel {
+  color: var(--foreground);
+  text-transform: uppercase;
+  font-size: 0.4rem;
+  font-weight: bold;
+  text-shadow: 9px 4px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Black Ops One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Hide carousel on smartphone devices */
 @media (max-width: 768px){
   .container {
@@ -92,7 +103,7 @@ nav  {
   left: 10px;
   right: 10px;
   background-size: cover;
-  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+  /* box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5); */
   display: flex;
 }
 
@@ -103,25 +114,25 @@ nav  {
   background-image: url("/photos/salle-comble.jpeg");
     transform: rotateY( 40deg) translateZ(430px); }
 .carousel__face:nth-child(3) {
-  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sunrise_in_Casablanca_with_Hassan_II_Mosque.jpg/2880px-Sunrise_in_Casablanca_with_Hassan_II_Mosque.jpg");
   transform: rotateY( 80deg) translateZ(430px); }
 .carousel__face:nth-child(4) {
-  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Casablanca_Finance_City_35.jpg/2880px-Casablanca_Finance_City_35.jpg");
   transform: rotateY(120deg) translateZ(430px); }
 .carousel__face:nth-child(5) { 
   background-image: url("/photos/casa-city-finance.png");
  transform: rotateY(160deg) translateZ(430px); }
 .carousel__face:nth-child(6) { 
-  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("/photos/carousel/equipe-feminine.png");
  transform: rotateY(200deg) translateZ(430px); }
 .carousel__face:nth-child(7) { 
-  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("/photos/carousel/raja-club.png");
  transform: rotateY(240deg) translateZ(430px); }
 .carousel__face:nth-child(8) {
-  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("/photos/carousel/raja-homme.png");
   transform: rotateY(280deg) translateZ(430px); }
 .carousel__face:nth-child(9) {
-  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("/photos/carousel/street-raja.png");
   transform: rotateY(320deg) translateZ(430px); }
 
 
@@ -171,6 +182,17 @@ nav  {
   color: #63b3ed; /* Couleur des liens */
   text-decoration: none; /* Supprime la ligne sous les liens */
   font-size: 11px; /* Taille de la police réduite */
+}
+.article-card {
+  display: flex;
+  align-items: center; /* Aligne les éléments verticalement */
+}
+
+.text-container {
+  margin-left: 16px; /* Ajoute de l'espace entre l'image et le texte */
+  display: flex;
+  flex-direction: column; /* Empile les éléments de texte verticalement */
+  justify-content: center; /* Centre le texte verticalement */
 }
 
 
