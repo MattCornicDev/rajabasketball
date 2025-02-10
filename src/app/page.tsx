@@ -17,9 +17,9 @@ const Page: React.FC = () => {
   const videos = [
     {
       iframeUrl:
-        "https://www.youtube.com/embed/HuV-gF7UcAA?si=r5Sni9oraq87JhVK",
-      title: "Vidéo d'entrainement",
-      date: "20 janvier 2024",
+        "/videos/conf-neyl-tedx.mp4",
+      title: "Médias",
+      date: "1 février 2025",
     },
     {
       iframeUrl:
@@ -141,7 +141,7 @@ const Page: React.FC = () => {
             imageUrl="/photos/exemple.jpg"
           />
         </aside>
-        <aside className="w-full sm:w-3/4 p-4 m-0 sm:mt-0 sm:ml-0">
+        <aside className="w-full sm:w-3/4 lg:w-2/4 p-4 m-0 sm:mt-0 sm:ml-0">
           {/* Exemple d'utilisation de ArticleCard */}
           {articles.map((article, index) => (
             <ArticleCard
