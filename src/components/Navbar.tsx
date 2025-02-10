@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="p-2">
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
         <div className="block md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -52,13 +52,15 @@ const Navbar: React.FC = () => {
             {isOpen ? "✖" : "☰"}
           </button>
         </div>
-        <div className="logo flex justify-center flex-grow">
+        <div className="flex ">
+        <div className="logo">
           <Image
             src="./logo-raja.svg"
             alt="logo raja athletic"
             width={70} // Ajustez la largeur selon vos besoins
             height={70} // Ajustez la hauteur selon vos besoins
           />
+        </div>
         </div>
         <div className={`md:flex ${isOpen ? "block" : "hidden"}`}>
           {[
@@ -156,7 +158,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
         {/* Lien de Connexion */}
-        <div className="relative flex justify-end text-lg">
+        <div className="relative flex justify-center text-lg">
           <a href="/login" className="px-4 py-2 flex items-center">
             <i className="fa fa-user" aria-hidden="true"></i>
           </a>
