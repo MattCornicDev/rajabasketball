@@ -1,19 +1,12 @@
 import React from "react";
-<<<<<<< HEAD
-import Image from "next/image";
-=======
 import Image from 'next/image'; // Ajoutez cette ligne
->>>>>>> dev
+
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 py-4">
       <div className="sponsor-logo bg-gray-900 py-10">
-<<<<<<< HEAD
-        <div className="flex justify-center space-x-4">
-=======
         <div className="flex justify-center space-x-2 flex-wrap">
->>>>>>> dev
           <Image
             src="/photos/sponsors/logo-infinicode.svg"
             alt="Sponsor infinicode"
@@ -153,16 +146,12 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex justify-center m-5">
-<<<<<<< HEAD
-        <Image src="/logo-raja-white.svg" alt="logo raja athletic" width={200} />
-=======
         <Image
           src="/logo-raja-white.svg"
           alt="logo raja athletic"
           width={200}
           height={100}
         />
->>>>>>> dev
       </div>
 
       <div className="social-media mx-auto text-center mt-4">
