@@ -30,6 +30,24 @@ const Footer: React.FC = () => {
     />
     {/* Ajoutez d'autres logos selon vos besoins */}
   </div>
+  <div className="flex justify-center">
+        <div className="flex justify-center m-5">
+          <Image
+            src="/Armoiries-du-Maroc.png"
+            alt="logo Armoiries du Maroc"
+            width={100}
+            height={50}
+          />
+        </div>
+        <div className="flex justify-center m-5">
+          <Image
+            src="photos/sponsors/Casablanca.svg"
+            alt="logo Casablanca"
+            width={100}
+            height={50}
+          />
+        </div>
+        </div>
 </div>
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <div className="newsletter bg-gray-900 p-1 rounded-md">
