@@ -123,16 +123,16 @@ nav  {
   background-image: url("/photos/casa-city-finance.png");
  transform: rotateY(160deg) translateZ(430px); }
 .carousel__face:nth-child(6) { 
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Bord_de_la_mer_de_ville_casablanca.jpg");
+  background-image: url("/photos/carousel/equipe-feminine.png");
  transform: rotateY(200deg) translateZ(430px); }
 .carousel__face:nth-child(7) { 
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Casa_port_station_2019.jpg/2880px-Casa_port_station_2019.jpg");
+  background-image: url("/photos/carousel/raja-club.png");
  transform: rotateY(240deg) translateZ(430px); }
 .carousel__face:nth-child(8) {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Parc_de_la_Ligue_arabe_Casablanca.jpg/2880px-Parc_de_la_Ligue_arabe_Casablanca.jpg");
+  background-image: url("/photos/carousel/raja-homme.png");
   transform: rotateY(280deg) translateZ(430px); }
 .carousel__face:nth-child(9) {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Casa_didier55_003.jpg");
+  background-image: url("/photos/carousel/street-raja.png");
   transform: rotateY(320deg) translateZ(430px); }
 
 

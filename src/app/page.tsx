@@ -69,31 +69,31 @@ const Page: React.FC = () => {
       <div className="container mx-auto">
         <div className="carousel mt-20">
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Site en construction</span>
+            <span className="title-carousel text-black -mt-5">Raja Athletic Club</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Very special</span>
+            <span className="title-carousel text-black -mt-5">Salle comble</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Special is the key</span>
+            <span className="title-carousel text-black -mt-5">Casablanca</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">For you</span>
+            <span className="title-carousel text-black -mt-5">Cite en Construction</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Just give it</span>
+            <span className="title-carousel text-black -mt-5">Casa Finance City</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">A try</span>
+            <span className="title-carousel text-black -mt-5">Des victoires sur le terrain</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">And see</span>
+            <span className="title-carousel text-black -mt-5">Une famille</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">How IT Works</span>
+            <span className="title-carousel text-black -mt-5">La jeunesse au rendez-vous</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Woow</span>
+            <span className="title-carousel text-black -mt-5">Street Sport</span>
           </div>
         </div>
         <Image
