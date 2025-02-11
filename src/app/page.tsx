@@ -18,6 +18,12 @@ const Page: React.FC = () => {
     },
     {
       imageUrl: "/photos/smatch2.jpeg",
+    },
+    {
+      imageUrl: "/photos/direction/partenariat-school.jpeg",
+    },
+    {
+      imageUrl: "/photos/direction/partenariat-school2.jpeg",
     }
   ];
   const videos = [

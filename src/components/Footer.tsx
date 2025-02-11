@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-center">
         <div className="flex justify-center m-5">
           <Image
-            src="/Armoiries-du-Maroc.png"
+            src="/photos/sponsors/armoiries-du-Maroc.png"
             alt="logo Armoiries du Maroc"
             width={100}
             height={50}
