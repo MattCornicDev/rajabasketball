@@ -72,6 +72,7 @@ const Page: React.FC = () => {
 
   return (
     <div>
+      <h2 className="blink text-3xl font-bold text-center text-red-500 m-10">SITE EN CONSTRUCTION</h2>
       <div className="container mx-auto">
         <div className="carousel mt-20">
           <div className="carousel__face rounded-sm">
