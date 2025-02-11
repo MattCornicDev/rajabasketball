@@ -8,11 +8,17 @@ import Image from 'next/image';
 const Page: React.FC = () => {
   const promotions = [
     {
-      imageUrl: "/photos/promotions/majestee-pub.png",
+      imageUrl: "/photos/preparation.jpeg",
     },
     {
-      imageUrl: "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt4b127dc0b6a439cd/66a1fed0b8ec6f488560926f/1180_442_(1).png?auto=webp&width=1280&disable=upscale&dpr=2",
+      imageUrl: "/photos/dribble.jpeg",
     },
+    {
+      imageUrl: "/photos/smatch.jpeg",
+    },
+    {
+      imageUrl: "/photos/smatch2.jpeg",
+    }
   ];
   const videos = [
     {
@@ -69,44 +75,58 @@ const Page: React.FC = () => {
       <div className="container mx-auto">
         <div className="carousel mt-20">
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Raja Athletic Club</span>
+            <span className="title-carousel text-black -mt-5">
+              Raja Athletic Club
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Salle comble</span>
+            <span className="title-carousel text-black -mt-5">
+              Salle comble
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
             <span className="title-carousel text-black -mt-5">Casablanca</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Cite en Construction</span>
+            <span className="title-carousel text-black -mt-5">
+              Cite en Construction
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Casa Finance City</span>
+            <span className="title-carousel text-black -mt-5">
+              Casa Finance City
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Des victoires sur le terrain</span>
+            <span className="title-carousel text-black -mt-5">
+              Des victoires sur le terrain
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
             <span className="title-carousel text-black -mt-5">Une famille</span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">La jeunesse au rendez-vous</span>
+            <span className="title-carousel text-black -mt-5">
+              La jeunesse au rendez-vous
+            </span>
           </div>
           <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Street Sport</span>
+            <span className="title-carousel text-black -mt-5">
+              Street Sport
+            </span>
           </div>
         </div>
         <Image
-          src="/photos/casa-city-finance.png" 
+          src="/photos/casa-city-finance.png"
           alt="Description de l'image"
-          width={300} 
+          width={300}
           height={200}
           className="mobile-image"
           style={{ display: "none" }}
         />
       </div>
 
-      <section className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-20">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-20">
         {videos.map((video, index) => (
           <div className="video-card" key={index}>
             <VideoCard
@@ -118,9 +138,14 @@ const Page: React.FC = () => {
         ))}
       </section>
 
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
         {promotions.map((promo, index) => (
-          <PromoCard key={index} imageUrl={promo.imageUrl} />
+          <div
+            className=""
+            key={index}
+          >
+            <PromoCard imageUrl={promo.imageUrl} />
+          </div>
         ))}
       </div>
 

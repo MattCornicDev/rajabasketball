@@ -7,13 +7,13 @@ interface PromoCardProps {
 
 const PromoCard: React.FC<PromoCardProps> = ({ imageUrl }) => {
   return (
-    <div className="w-full border-1 border-gray-300 shadow-lg p-1 m-4">
+    <div className="">
       <Image 
         src={imageUrl} 
         alt="Promotion" 
         width={300} 
         height={200} 
-        className="w-full h-auto" 
+        className="" 
       />
     </div>
   );
