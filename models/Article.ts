@@ -9,6 +9,8 @@ export interface Article extends Document {
     updatedAt: Date;
 }
 
+export type ArticleType = Article; 
+
 const ArticleSchema: Schema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },

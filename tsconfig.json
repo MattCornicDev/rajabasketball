@@ -1,29 +1,45 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "target": "es5", // Cible de compilation
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Bibliothèques à inclure
+    "allowJs": true, // Autoriser les fichiers JavaScript
+    "skipLibCheck": true, // Ignorer la vérification des types des fichiers de déclaration
+    "strict": true, // Activer toutes les vérifications de type strictes
+    "forceConsistentCasingInFileNames": true, // Forcer la casse cohérente dans les noms de fichiers
+    "noEmit": true, // Ne pas émettre de fichiers de sortie
+    "esModuleInterop": true, // Activer l'interopérabilité des modules ES
+    "module": "esnext", // Type de module
+    "moduleResolution": "node", // Résolution des modules
+    "resolveJsonModule": true, // Autoriser l'importation de fichiers JSON
+    "isolatedModules": true, // Vérifier chaque fichier en tant que module
+    "jsx": "preserve", // Conserver le JSX
+    "baseUrl": ".", // Base pour les chemins relatifs
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/models/*": ["./models/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/src/*": ["./src/*"]
+    },
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/models/*": ["./models/*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/mongodb.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts", // Fichier d'environnement Next.js
+    "**/*.ts", // Inclure tous les fichiers TypeScript
+    "**/*.tsx", // Inclure tous les fichiers TypeScript avec JSX
+    ".next/types/**/*.ts", // Types générés par Next.js
+    "lib/mongodb.js", // Inclure le fichier JavaScript pour la connexion MongoDB
+    "src/api/articles.ts" // Inclure le fichier API des articles
+  ],
+  "exclude": [
+    "node_modules"
+  ] // Exclure le répertoire node_modules
 }
