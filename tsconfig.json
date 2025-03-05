@@ -19,8 +19,10 @@
     "jsx": "preserve", // Conserver le JSX
     "baseUrl": ".", // Base pour les chemins relatifs
     "paths": {
+      "@/middleware/*": ["./src/middleware/*"],
       "@/components/*": ["./src/components/*"],
       "@/models/*": ["./models/*"],
+      "@/pages/*": ["./pages/*"],
       "@/lib/*": ["./lib/*"],
       "@/src/*": ["./src/*"]
     },
