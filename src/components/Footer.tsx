@@ -4,8 +4,8 @@ import Image from 'next/image'; // Ajoutez cette ligne
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 py-4">
-      <div className="sponsor-logo bg-gray-900 py-10">
+    <footer className="py-4">
+      <div className="sponsor-logo  py-10">
         <div className="flex justify-center space-x-2 flex-wrap">
           <Image
             src="/photos/sponsors/logo-infinicode.svg"
@@ -50,15 +50,15 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div className="newsletter bg-gray-900 p-1 rounded-md">
+        <div className="newsletter p-1 rounded-md">
           <h4 className="text-md mb-2">Inscrivez-vous à notre newsletter</h4>
           <div className="flex">
             <input
               type="email"
               placeholder="Votre email"
-              className="flex-grow p-2 bg-gray-500 border border-gray-500 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-5 placeholder-white"
+              className="flex-grow p-2 bg-green-900 border border-green-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-700 h-5 placeholder-white"
             />
-            <button className="bg-gray-800 flex items-center justify-center h-5 px-4 rounded-r-md hover:bg-gray-600">
+            <button className="bg-green-900 flex items-center justify-center h-5 px-4 rounded-r-md hover:bg-green-200">
               Inscription
             </button>
           </div>
@@ -92,12 +92,12 @@ const Footer: React.FC = () => {
         <div className="contact-info">
           <h4 className="font-bold">Contact</h4>
           <p>
-            <span className="font-bold">Contactez-nous :</span>
+            <span className="font-bold">Contactez-nous : </span>
             <a href="tel:+2120658618726">{"+212 (0)658-618726"}</a>
           </p>
           <p>
-            <span className="font-bold">Email :</span>{" "}
-            contact@rajaathleticclub.com
+            <span className="font-bold">Email :</span>
+            <a href="mailto:teamtechmanager@aol.com"> teamtechmanager@aol.com</a>
           </p>
           <p>
             <span className="font-bold">Siège :</span> Complexe Sportif

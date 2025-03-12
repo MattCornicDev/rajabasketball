@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Login = () => {
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -19,7 +21,9 @@ const Login = () => {
         const data = await response.json();
         if (response.ok) {
             setMessage('Connexion réussie !');
+            localStorage.setItem('token', data.token);
             console.log('Token:', data.token);
+            router.push('/dashboard');
         } else {
             setMessage(data.message || 'Erreur lors de la connexion.');
         }

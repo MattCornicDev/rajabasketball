@@ -18,7 +18,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, description, linkText,
         alt="Image Article" 
         width={200} 
         height={200} 
-        className="w-full md:w-1/2" // Prend toute la largeur sur mobile, moitié sur desktop
+        className="w-1/2 md:w-1/2" // Prend toute la largeur sur mobile, moitié sur desktop
     />
     <div className="text-container mt-4 md:mt-0 md:ml-4 md:w-1/2"> {/* Espace entre l'image et le texte */}
         <h3 className="title-article text-lg font-bold">{title}</h3>

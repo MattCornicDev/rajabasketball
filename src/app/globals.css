@@ -7,16 +7,38 @@
   --foreground: #302931;
   --text: #323232;
   --textCard: #8e8d8d;
+  --rajaColor: #001e18;
 }
 
-/*
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-*/
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+.clignote {
+  animation: blink 0.5s linear 0s 3; /* Clignote 3 fois */
+}
+/* Logo */
+.logo-background {
+  position: absolute; /* Position it absolutely */
+  top: 0;
+  left: -300px;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it's behind other content */
+}
 
 *{
   margin: 0;
@@ -108,7 +130,7 @@ nav  {
 }
 
 .carousel__face:nth-child(1) {
-  background-image: url("/photos/rca.jpeg");
+  background-image: url("/photos/ramadan-moubarak.jpg");
   transform: rotateY(  0deg) translateZ(430px); }
 .carousel__face:nth-child(2) { 
   background-image: url("/photos/salle-comble.jpeg");
@@ -199,7 +221,8 @@ nav  {
 /* Footer */
 
 footer {
-  background-color: #1a202c; /* Couleur de fond (gris foncé) */
+  /*background-color: #1a202c; /* Couleur de fond (gris foncé) */
+  background-color: var(--rajaColor); /* Couleur de fond (vert raja) */
   color: #a19e9e; /* Couleur du texte */
   padding: 20px; /* Espacement interne */
   font-size: 11px; /* Taille de la police réduite */

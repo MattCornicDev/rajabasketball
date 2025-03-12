@@ -9,15 +9,15 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, date }) => {
   return (
-    <div className="rounded-sm flex flex-col">
+    <div className="flex flex-col">
       <div className="video-card w-full">
         <iframe
-        width="350"
-         height="180"
-          className=""
+          width="280"
+         height="160"
+          className="rounded-md"
           src={iframeUrl}
           title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>

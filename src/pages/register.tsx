@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 const Register = () => {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -29,6 +30,14 @@ const Register = () => {
         <div className="flex items-center justify-center min-h-screen bg-gray-800">
         <form onSubmit={handleRegister} className="bg-gray-700 p-6 rounded shadow-md w-80">
             <h1 className="text-white text-lg font-bold mb-4">S'inscrire</h1>
+            <input
+                type="text"
+                placeholder="Nom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="block w-full p-2 mb-4 rounded bg-gray-600 text-white"
+            />
             <input
                 type="email"
                 placeholder="Email"

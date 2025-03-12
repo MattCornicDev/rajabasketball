@@ -4,6 +4,7 @@ import VideoCard from "@/components/VideoCard";
 import AsideCard from "@/components/AsideCard";
 import ArticleCard from "@/components/ArticleCard";
 import Image from 'next/image';
+import Header from "@/components/Header";
 
 const Page: React.FC = () => {
   const promotions = [
@@ -24,7 +25,13 @@ const Page: React.FC = () => {
     },
     {
       imageUrl: "/photos/direction/partenariat-school2.jpeg",
-    }
+    },
+    {
+      imageUrl: "/photos/PHOTO-2025-01-23-15-00-48.jpg",
+    },
+    {
+      imageUrl: "/photos/PHOTO-2025-01-23-15-00-49.jpg",
+    },
   ];
   const videos = [
     {
@@ -35,15 +42,15 @@ const Page: React.FC = () => {
     },
     {
       iframeUrl:
-        "https://www.youtube.com/embed/OiZBstutEWc?si=sm_BTC7D7ZKLMEjB",
+        "/videos/VIDEO-2025-02-23-16-39-37.mp4",
       title: "Vidéo d'entrainement",
       date: "20 janvier 2024",
     },
     {
       iframeUrl:
-        "https://www.youtube.com/embed/IzytUXV7Nhg?si=YKK6FowCDqgope87",
-      title: "Vidéo d'entrainement",
-      date: "20 janvier 2024",
+        "/videos/Video.mp4",
+      title: "Vidéo de l'académie",
+      date: "23 février 2025",
     },
     {
       iframeUrl:
@@ -77,13 +84,14 @@ const Page: React.FC = () => {
   ];
 
   return (
-    <div>
-      <h2 className="blink text-3xl font-bold text-center text-red-500 m-10">SITE EN CONSTRUCTION</h2>
+    <div className="">
+      <h2 className="clignote text-3xl font-bold text-center text-red-500 m-10">SITE EN CONSTRUCTION</h2>
+      <h6 className="text-md text-center text-black m-10"><Header /></h6>
       <div className="container mx-auto">
         <div className="carousel mt-20">
           <div className="carousel__face rounded-sm">
             <span className="title-carousel text-black -mt-5">
-              Raja Athletic Club
+              Ramadan Moubarak
             </span>
           </div>
           <div className="carousel__face rounded-sm">
@@ -133,28 +141,40 @@ const Page: React.FC = () => {
         />
       </div>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-20">
-        {videos.map((video, index) => (
-          <div className="video-card" key={index}>
-            <VideoCard
-              iframeUrl={video.iframeUrl}
-              title={video.title}
-              date={video.date}
-            />
-          </div>
-        ))}
-      </section>
+      <section className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center mt-20">
+  {videos.map((video, index) => (
+    <div className="video-card" key={index}>
+      <VideoCard
+        iframeUrl={video.iframeUrl}
+        title={video.title}
+        date={video.date}
+      />
+    </div>
+  ))}
+</section>
 
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
-        {promotions.map((promo, index) => (
-          <div
-            className=""
-            key={index}
-          >
-            <PromoCard imageUrl={promo.imageUrl} />
-          </div>
-        ))}
+      <div className="logo-background">
+          <Image
+            src="/logo-raja-background.svg"
+            alt="Logo Raja Athletic Club"
+            width={1000}
+            height={1000}
+          />
+        </div>
+
+        <div className="w-3/4 mx-auto">
+  <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+    {promotions.map((promo, index) => (
+      <div className="" key={index}>
+        <PromoCard imageUrl={promo.imageUrl} />
       </div>
+    ))}
+  </div>
+</div>
+
+  <div className="mx-auto m-10">
+  <img src="photos/rca.jpeg" className="w-full h-48 object-cover" alt="Description" />
+  </div>
 
       <div className="aside flex flex-col sm:flex-row">
         <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-0">

@@ -37,8 +37,8 @@ export const login = async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({ token });
+    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
+    res.status(200).json({ token, role: user.role });
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
