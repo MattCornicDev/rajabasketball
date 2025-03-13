@@ -10,11 +10,11 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = ({ iframeUrl, title, date }) => {
   return (
     <div className="flex flex-col">
-      <div className="video-card w-full">
+      <div className="video-card mb-4"> {/* Ajout de la marge en bas */}
         <iframe
-          width="280"
-         height="160"
-          className="rounded-md"
+          width="300"
+          height="300"
+          className="rounded-md w-4l h-full justify-between"
           src={iframeUrl}
           title={title}
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

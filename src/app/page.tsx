@@ -24,13 +24,13 @@ const Page: React.FC = () => {
       imageUrl: "/photos/direction/partenariat-school.jpeg",
     },
     {
-      imageUrl: "/photos/direction/partenariat-school2.jpeg",
-    },
-    {
       imageUrl: "/photos/PHOTO-2025-01-23-15-00-48.jpg",
     },
     {
       imageUrl: "/photos/PHOTO-2025-01-23-15-00-49.jpg",
+    },
+    {
+      imageUrl: "/photos/direction/partenariat-school2.jpeg",
     },
   ];
   const videos = [
@@ -141,7 +141,7 @@ const Page: React.FC = () => {
         />
       </div>
 
-      <section className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center mt-20">
+      <section className="w-3/4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-20">
   {videos.map((video, index) => (
     <div className="video-card" key={index}>
       <VideoCard
@@ -173,7 +173,7 @@ const Page: React.FC = () => {
 </div>
 
   <div className="mx-auto m-10">
-  <img src="photos/rca.jpeg" className="w-full h-48 object-cover" alt="Description" />
+  <img src="photos/rca.jpeg" className="w-full h-40 object-cover" alt="Description" />
   </div>
 
       <div className="aside flex flex-col sm:flex-row">

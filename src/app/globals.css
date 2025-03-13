@@ -10,13 +10,14 @@
   --rajaColor: #001e18;
 }
 
-/* Dark mode */
+/* Dark mode 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+  */
 
 @keyframes blink {
   0%, 100% {
