@@ -36,12 +36,6 @@ const Page: React.FC = () => {
   const videos = [
     {
       iframeUrl:
-        "/videos/conf-neyl-tedx.mp4",
-      title: "Médias",
-      date: "1 février 2025",
-    },
-    {
-      iframeUrl:
         "/videos/VIDEO-2025-02-23-16-39-37.mp4",
       title: "Vidéo d'entrainement",
       date: "20 janvier 2024",
@@ -57,6 +51,12 @@ const Page: React.FC = () => {
         "https://www.youtube.com/embed/e50HuSxlp8A?si=NAo475OtXDLV_4OL",
       title: "Vidéo d'entrainement",
       date: "20 janvier 2024",
+    },
+    { 
+      iframeUrl:
+        "https://www.youtube.com/embed/e50HuSxlp8A?si=bcKg1-lsSXL_8nde",
+      title: "Vidéo de l'académie",
+      date: "1 février 2025",
     },
   ];
   const articles = [
@@ -173,7 +173,7 @@ const Page: React.FC = () => {
 </div>
 
   <div className="mx-auto m-10">
-  <img src="photos/rca.jpeg" className="w-full h-40 object-cover" alt="Description" />
+  <Image src="/photos/rca.jpeg" className="w-full h-40 object-cover" alt="Description" width={300} height={200} />
   </div>
 
       <div className="aside flex flex-col sm:flex-row">
