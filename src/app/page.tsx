@@ -73,14 +73,7 @@ const Page: React.FC = () => {
       description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
       linkText: "Lire la suite",
       linkHref: "#",
-    },
-    {
-      title: "Du nouveau dans la vie sportive",
-      imageUrl: "/photos/photo-athlete.png",
-      description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
-      linkText: "Lire la suite",
-      linkHref: "#",
-    },
+    }
   ];
 
   return (
