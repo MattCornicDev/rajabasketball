@@ -62,15 +62,15 @@ const Page: React.FC = () => {
   const articles = [
     {
       title: "Hisoire du club",
-      imageUrl: "https://scontent-cdg4-3.xx.fbcdn.net/v/t39.30808-6/441953200_1010712144273916_684655740528958862_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mNbXZoSi3bQQ7kNvgHQwzQ-&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=AiYnQ4JWrR736mXiN_jW4ce&oh=00_AYBT3C7fNEUy5bY029ICe-4fjxg6Fdg2OxvzA7FWBhwZng&oe=67A6C916",
-      description: "Le Raja Club Athletic, fondé en 1949 à Casablanca, est l'un des clubs de football les plus emblématiques du Maroc et d'Afrique...",
+      imageUrl: "/aigle.png",
+      description: "Le Raja Club Athletic de Casablanca est l’un des clubs de basketball les plus emblématiques du Maroc. Héritier d’une tradition sportive riche et d’un palmarès respectable, le Raja Basketball a marqué l’histoire du basket marocain par ses performances, son engagement et sa contribution au développement de ce sport au Maroc.",
       linkText: "Lire la suite",
       linkHref: "#",
     },
     {
-      title: "Du nouveau dans la vie sportive",
-      imageUrl: "https://scontent-cdg4-3.xx.fbcdn.net/v/t1.6435-9/130978795_2213767175433526_2092208791089888399_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vIZiG2ASJkwQ7kNvgF6YfvY&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=AkmjQvhBbd9sX9ZhdpUF6zY&oh=00_AYA8UnUJc-3ny-IpP0D9bqjMLlFksRANdofXU8oUBJSRsQ&oe=67C87958",
-      description: "Le Maroc connaît une dynamique croissante dans le domaine du sport...",
+      title: "Le Maroc, une dynamique croissante dans le domaine du basket-ball",
+      imageUrl: "/videos/bal.mp4",
+      description: "Le Maroc connaît une véritable effervescence dans le domaine du basket-ball ces dernières années. Grâce à des investissements conséquents, des infrastructures modernes et une volonté politique affirmée, le pays se positionne comme un acteur émergent sur la scène africaine et développe des liens solides avec la Basketball Africa League (BAL) et la NBA.",
       linkText: "Lire la suite",
       linkHref: "#",
     }
