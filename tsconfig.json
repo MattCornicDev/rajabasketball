@@ -40,7 +40,7 @@
     ".next/types/**/*.ts", // Types générés par Next.js
     "lib/mongodb.js", // Inclure le fichier JavaScript pour la connexion MongoDB
     "src/api/articles.ts" // Inclure le fichier API des articles
-  ],
+, "next.config.js", "next.config.js"  ],
   "exclude": [
     "node_modules"
   ] // Exclure le répertoire node_modules
