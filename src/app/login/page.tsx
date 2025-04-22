@@ -35,8 +35,10 @@ export default function LoginPage() {
       
       // Simuler une réussite
       router.push('/dashboard')
-    } catch {
+    } catch (err) {
       setError('Erreur lors de la connexion')
+      console.error('Login error:', err)
+    } finally {
       setIsSubmitting(false)
     }
   }

@@ -23,8 +23,7 @@ export async function middleware(request: NextRequest) {
     request.headers.set('userId', userId);
 
     return NextResponse.next();
-  } catch (err) {
-    console.error('JWT verification error:', err);
+  } catch {
     return NextResponse.json(
       { message: 'Unauthorized' },
       { status: 401 }
