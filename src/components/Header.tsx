@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 const Header: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement>(null);

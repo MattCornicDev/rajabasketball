@@ -1,21 +1,30 @@
-// src/middleware/auth.ts
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
-export const authenticate = (req: NextApiRequest, res: NextApiResponse, next: Function) => {
-    const token = req.headers.authorization?.split(' ')[1];
+export async function middleware(request: NextRequest) {
+  const token = request.headers.get('authorization')?.split(' ')[1];
 
-    if (!token) {
-        return res.status(401).json({ message: 'No token provided' });
-    }
+  if (!token) {
+    return NextResponse.json(
+      { message: 'No token provided' },
+      { status: 401 }
+    );
+  }
 
-    jwt.verify(token, JWT_SECRET, (err, decoded) => {
-        if (err) {
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
-        req.userId = (decoded as any).id; // Ajoutez l'ID utilisateur à la requête
-        next();
-    });
-};
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const userId = (decoded as { id: string }).id;
+    
+    // Ajoutez l'ID utilisateur à la requête
+    request.headers.set('userId', userId);
+
+    return NextResponse.next();
+  } catch (err) {
+    return NextResponse.json(
+      { message: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+}

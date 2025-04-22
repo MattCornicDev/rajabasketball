@@ -126,7 +126,7 @@ export default function LoginPage() {
               href="/register"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              Pas encore de compte ? S'inscrire
+              Pas encore de compte ? S&apos;inscrire
             </Link>
           </div>
         </form>

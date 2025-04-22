@@ -6,7 +6,7 @@ export default function CalendrierPage() {
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Calendrier</h1>
         <p className="text-gray-600">
-          Au Maroc, le plus haut niveau de basket-ball professionnel est la Division Excellence, également connue sous le nom de DEX-H. Ce championnat annuel réunit les quatorze meilleures équipes professionnelles du pays, réparties en deux groupes géographiques : le groupe Nord et le groupe Sud. La compétition est organisée par la Fédération Royale Marocaine de Basket-Ball (FRMBB) et bénéficie d'une couverture télévisée sur la chaîne Arryadia.
+          Au Maroc, le plus haut niveau de basket-ball professionnel est la Division Excellence, également connue sous le nom de DEX-H. Ce championnat annuel réunit les quatorze meilleures équipes professionnelles du pays, réparties en deux groupes géographiques : le groupe Nord et le groupe Sud. La compétition est organisée par la Fédération Royale Marocaine de Basket-Ball (FRMBB) et bénéficie d&apos;une couverture télévisée sur la chaîne Arryadia.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export default function CalendrierPage() {
 
         <div className="mt-6 text-center">
           <p className="text-gray-600">
-            Ces clubs ont marqué l'histoire du basket-ball marocain par leurs performances et leur palmarès impressionnant.
+            Ces clubs ont marqué l&apos;histoire du basket-ball marocain par leurs performances et leur palmarès impressionnant.
           </p>
         </div>
       </div>

@@ -29,7 +29,7 @@ const Register = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-800">
         <form onSubmit={handleRegister} className="bg-gray-700 p-6 rounded shadow-md w-80">
-            <h1 className="text-white text-lg font-bold mb-4">S'inscrire</h1>
+            <h1 className="text-white text-lg font-bold mb-4">S&apos;inscrire</h1>
             <input
                 type="text"
                 placeholder="Nom"

@@ -38,7 +38,7 @@ export default function ContactPage() {
       <div className="max-w-md mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Contactez-nous</h1>
-          <p className="text-gray-500">Nous sommes là pour vous aider. N'hésitez pas à nous contacter !</p>
+          <p className="text-gray-500">Nous sommes là pour vous aider. N&apos;hésitez pas à nous contacter !</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">

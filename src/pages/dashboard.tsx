@@ -38,7 +38,7 @@ const Dashboard = () => {
         <div>
             <h1>Tableau de Bord</h1>
             {user && <p>Bienvenue, {user.email}!{user.name}</p>}
-            <p>Vous pouvez maintenant utiliser l'application.</p>
+            <p>Vous pouvez maintenant utiliser l&apos;application.</p>
         </div>
     );
 };
