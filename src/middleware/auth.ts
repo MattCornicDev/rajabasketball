@@ -4,14 +4,16 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
 export async function middleware(request: NextRequest) {
-  const token = request.headers.get('authorization')?.split(' ')[1];
-
-  if (!token) {
+  const authHeader = request.headers.get('authorization');
+  
+  if (!authHeader) {
     return NextResponse.json(
       { message: 'No token provided' },
       { status: 401 }
     );
   }
+
+  const token = authHeader.split(' ')[1];
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
@@ -22,6 +24,7 @@ export async function middleware(request: NextRequest) {
 
     return NextResponse.next();
   } catch (err) {
+    console.error('JWT verification error:', err);
     return NextResponse.json(
       { message: 'Unauthorized' },
       { status: 401 }

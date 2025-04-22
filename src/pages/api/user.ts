@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import jwt from 'jsonwebtoken';
 import User from '@/models/User'; // Assurez-vous que le chemin est correct
 import dbConnect from '@/lib/mongodb';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'ton_jwt_secret';
 
 // Fonction pour enregistrer un nouvel utilisateur
 const registerUser = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -30,5 +27,3 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
 };
-
-export default handler;
