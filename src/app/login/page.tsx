@@ -2,10 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLock } from '@fortawesome/free-solid-svg-icons'
-
-import Link from 'next/link'
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
