@@ -175,7 +175,7 @@ const Page: React.FC = () => {
             title="Nouvel équipement"
             content="Découvrez nos articles."
             linkText="Equipementier Majestee"
-            linkHref="#"
+            linkHref="https://www.majestee.fr/"
             imageUrl="/photos/equipements/veste-raja.jpeg"
           />
           <AsideCard

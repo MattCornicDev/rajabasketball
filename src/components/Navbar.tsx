@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         "Bannière",
       ],
       icon: "fa-home",
-      route: "accueil"
+      route: "/"
     },
     {
       name: "Calendrier",
@@ -86,13 +86,13 @@ const Navbar: React.FC = () => {
       icon: "fa-newspaper",
       route: "actualites"
     },
-    {
-      name: "Galerie",
-      display: "Galerie",
-      submenu: ["Photos", "Vidéos"],
-      icon: "fa-images",
-      route: "galerie"
-    },
+    // {
+    //   name: "Galerie",
+    //   display: "Galerie",
+    //   submenu: ["Photos", "Vidéos"],
+    //   icon: "fa-images",
+    //   route: "galerie"
+    // },
     {
       name: "Billeterie",
       display: "Billeterie",
@@ -112,27 +112,28 @@ const Navbar: React.FC = () => {
         "Équipement sportifs",
         "Produits dérivés",
       ],
-      icon: "fa-shopping-cart"
+      icon: "fa-shopping-cart",
+      route: "boutique"
     },
-    {
-      name: "Partenaires",
-      display: "Partenaires",
-      submenu: ["Les partenaires"],
-      icon: "fa-handshake",
-      route: "partenaires"
-    },
-    {
-      name: "Fan Zone",
-      display: "Fan Zone",
-      submenu: [
-        "Forum de discussion",
-        "Quiz et jeux interactifs",
-        "Concours",
-        "Informations sur les groupes de supporters",
-      ],
-      icon: "fa-heart",
-      route: "fan-zone"
-    },
+    // {
+    //   name: "Partenaires",
+    //   display: "Partenaires",
+    //   submenu: ["Les partenaires"],
+    //   icon: "fa-handshake",
+    //   route: "partenaires"
+    // },
+    // {
+    //   name: "Fan Zone",
+    //   display: "Fan Zone",
+    //   submenu: [
+    //     "Forum de discussion",
+    //     "Quiz et jeux interactifs",
+    //     "Concours",
+    //     "Informations sur les groupes de supporters",
+    //   ],
+    //   icon: "fa-heart",
+    //   route: "fan-zone"
+    // },
     {
       name: "À propos",
       display: "À propos",
@@ -171,7 +172,7 @@ const Navbar: React.FC = () => {
         <div className="flex">
           <div className="logo">
             <Image
-              src="./logo-raja.svg"
+              src="/logo-raja-mini.png"
               alt="logo raja athletic"
               width={70}
               height={70}

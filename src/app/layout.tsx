@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Raja BasketBall",
   description: "Site officiel de Raja Athletic Club",
   icons: {
-    icon: './logo-raja.svg',
+    icon: './logo-raja-mini.png',
   }
 };
 
