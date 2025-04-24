@@ -78,7 +78,7 @@ const Page: React.FC = () => {
 
   return (
     <div className="">
-      <h2 className="clignote text-3xl font-bold text-center text-red-500 m-10">SITE EN CONSTRUCTION</h2>
+      <h2 className="clignote text-3xl font-bold text-center text-red-500 m-10"></h2>
       <h6 className="text-md text-center text-black m-10"><Header /></h6>
       <div className="container mx-auto">
         <div className="carousel mt-20">
