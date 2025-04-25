@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         "Résultats récents",
         "Bannière",
       ],
-      icon: "fa-home",
+      // icon: "fa-home",
       route: "/"
     },
     {
@@ -64,14 +64,14 @@ const Navbar: React.FC = () => {
         "Classements",
         "Télécharger le calendrier",
       ],
-      icon: "fa-calendar",
+      // icon: "fa-calendar",
       route: "calendrier"
     },
     {
       name: "Equipe",
       display: "Equipe",
       submenu: ["Joueurs", "Staff", "Histoire"],
-      icon: "fa-users",
+      // icon: "fa-users",
       route: "equipe"
     },
     {
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         "Performances",
         "Communiqués officiels",
       ],
-      icon: "fa-newspaper",
+      // icon: "fa-newspaper",
       route: "actualites"
     },
     // {
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
         "Lien pour acheter un billet",
         "Point de vente physique",
       ],
-      icon: "fa-ticket",
+      // icon: "fa-ticket",
       route: "billeterie"
     },
     {
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
         "Équipement sportifs",
         "Produits dérivés",
       ],
-      icon: "fa-shopping-cart",
+      // icon: "fa-shopping-cart",
       route: "boutique"
     },
     // {
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
         "Valeurs et vision",
         "Information de contact",
       ],
-      icon: "fa-info-circle",
+      // icon: "fa-info-circle",
       route: "a-propos"
     },
     {
@@ -153,7 +153,7 @@ const Navbar: React.FC = () => {
         "Adresse du club",
         "Téléphones et email",
       ],
-      icon: "fa-envelope",
+      // icon: "fa-envelope",
       route: "contact"
     }
   ];
