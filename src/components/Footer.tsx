@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex justify-center m-5">
           <Image
-            src="photos/sponsors/Casablanca.svg"
+            src="/photos/sponsors/Casablanca.svg"
             alt="logo Casablanca"
             width={100}
             height={50}

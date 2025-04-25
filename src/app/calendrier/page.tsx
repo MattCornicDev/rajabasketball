@@ -1,54 +1,59 @@
 "use client"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
 export default function CalendrierPage() {
+  const matchs = [
+    {
+      date: "2025-04-28",
+      time: "20:00",
+      opponent: "FUS Rabat",
+      location: "Palais des Sports - Casablanca",
+      home: true,
+    },
+    {
+      date: "2025-05-03",
+      time: "18:30",
+      opponent: "AS Salé",
+      location: "Complexe Sportif - Salé",
+      home: false,
+    },
+    {
+      date: "2025-05-10",
+      time: "17:00",
+      opponent: "KAC Kénitra",
+      location: "Palais des Sports - Casablanca",
+      home: true,
+    }
+  ]
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">Calendrier</h1>
-        <p className="text-gray-600">
-          Au Maroc, le plus haut niveau de basket-ball professionnel est la Division Excellence, également connue sous le nom de DEX-H. Ce championnat annuel réunit les quatorze meilleures équipes professionnelles du pays, réparties en deux groupes géographiques : le groupe Nord et le groupe Sud. La compétition est organisée par la Fédération Royale Marocaine de Basket-Ball (FRMBB) et bénéficie d&apos;une couverture télévisée sur la chaîne Arryadia.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gray-100 text-black px-4 py-12">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-5xl font-extrabold text-center mb-10">Calendrier des Matchs</h1>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Clubs les plus titrés</h2>
-        
-        <div className="space-y-4">
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm mr-4">
-              1
+        <div className="space-y-6">
+          {matchs.map((match, index) => (
+            <div key={index} className="p-6 rounded-lg bg-gray-400 hover:bg-gray-100 transition-colors shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-bold">
+                  {match.home ? " Raja Casablanca" : match.opponent} vs {match.home ? match.opponent : " Raja Casablanca"}
+                </h2>
+                <span className="text-gray-400 text-sm">{new Date(match.date).toLocaleDateString('fr-FR')}</span>
+              </div>
+              <div className="flex items-center text-gray-300 space-x-6">
+                <div>
+                  <FontAwesomeIcon icon={faClock} className="mr-2 text-blue-400" />
+                  {match.time}
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-green-400" />
+                  {match.location}
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">FUS de Rabat</h3>
-              <p className="text-gray-600">19 titres de champion, dont les saisons 2023 et 2024</p>
-            </div>
-          </div>
-
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm mr-4">
-              2
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">Wydad Athletic Club (WAC)</h3>
-              <p className="text-gray-600">10 titres de champion</p>
-            </div>
-          </div>
-
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm mr-4">
-              3
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">Association Sportive de Salé (AS Salé)</h3>
-              <p className="text-gray-600">9 titres de champion</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 text-center">
-          <p className="text-gray-600">
-            Ces clubs ont marqué l&apos;histoire du basket-ball marocain par leurs performances et leur palmarès impressionnant.
-          </p>
+          ))}
         </div>
       </div>
     </div>

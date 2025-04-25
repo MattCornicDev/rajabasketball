@@ -36,7 +36,7 @@ const Page: React.FC = () => {
   const videos = [
     {
       iframeUrl:
-        "/videos/VIDEO-2025-02-23-16-39-37.mp4",
+        "https://www.youtube.com/embed/HuV-gF7UcAA?si=KftEHXmnP-PPfqXZ",
       title: "Vidéo d'entrainement",
       date: "20 janvier 2024",
     },
