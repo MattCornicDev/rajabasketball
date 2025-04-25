@@ -191,7 +191,7 @@ const Navbar: React.FC = () => {
                 href={`/${item.route}`}
                 className="px-4 py-2 flex items-center"
               >
-                <i className={`fa ${item.icon}`} aria-hidden="true"></i>
+                
                 <span className="ml-2">{item.name}</span>
               </Link>
               {subMenuStates[item.name.toLowerCase() as SubMenuKeys] && (
