@@ -1,77 +1,89 @@
-"use client"
+"use client";
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+interface AuthResponse {
+  message?: string;
+}
 
 export default function LoginPage() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  })
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState('')
-
-  const router = useRouter()
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setError('')
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setError('');
 
     try {
-      // Ici vous pouvez ajouter votre logique d'authentification
-      // Par exemple, envoyer les données à une API
-      console.log('Login attempt:', formData)
-      
-      // Simuler une réussite
-      router.push('/dashboard')
-    } catch (err) {
-      setError('Erreur lors de la connexion')
-      console.error('Login error:', err)
+      const response = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'login', email, password }),
+      });
+      const data = await response.json() as AuthResponse;
+
+      if (!response.ok) {
+        setError(data.message || 'La connexion a échoué. Vérifiez vos identifiants.');
+        return;
+      }
+
+      router.push('/dashboard');
+    } catch {
+      setError('Le service est momentanément indisponible. Réessayez dans un instant.');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-800">
-      <form onSubmit={handleSubmit} className="bg-gray-700 p-6 rounded shadow-md w-80">
-        <h1 className="text-white text-lg font-bold mb-4">Connexion</h1>
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="block w-full p-2 mb-4 rounded bg-gray-600 text-white"
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          className="block w-full p-2 mb-4 rounded bg-gray-600 text-white"
-        />
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
-        >
-          {isSubmitting ? 'Connexion...' : 'Se connecter'}
-        </button>
-        {error && (
-          <p className="text-red-500 text-center mt-2">{error}</p>
-        )}
-      </form>
-    </div>
-  )
+    <main className="auth-page">
+      <section className="auth-card" aria-labelledby="login-title">
+        <p className="eyebrow">Espace membre Raja</p>
+        <h1 id="login-title" className="auth-title">Heureux de vous revoir.</h1>
+        <p className="auth-description">Connectez-vous pour accéder à votre espace personnel.</p>
+
+        <form onSubmit={handleSubmit} className="auth-form">
+          <label htmlFor="email">Adresse e-mail</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="vous@exemple.com"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+          />
+
+          <label htmlFor="password">Mot de passe</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autoComplete="current-password"
+            placeholder="Votre mot de passe"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+          />
+
+          {error && <p className="form-message form-message-error" role="alert">{error}</p>}
+
+          <button className="button button-primary auth-submit" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Connexion en cours…' : 'Se connecter'}
+          </button>
+        </form>
+
+        <p className="auth-switch">
+          Pas encore de compte ? <Link href="/register">Créer un compte</Link>
+        </p>
+      </section>
+    </main>
+  );
 }

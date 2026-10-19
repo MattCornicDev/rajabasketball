@@ -1,59 +1,105 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import dbConnect from '@/lib/mongodb';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'ton_jwt_secret';
+import { assertAuthConfigured, clearSessionCookie, createSessionToken, setSessionCookie } from '@/lib/auth';
+import { Buffer } from 'node:buffer';
 
 // Fonction d'inscription
-export const register = async (req: NextApiRequest, res: NextApiResponse) => { 
-    const { email, password } = req.body;
-
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-        return res.status(400).json({ message: 'User already exists' });
+export const register = async (req: NextApiRequest, res: NextApiResponse) => {
+    const { name, email, password } = req.body ?? {};
+    if (
+        typeof name !== 'string' || !name.trim() || name.trim().length > 100 ||
+        typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+        typeof password !== 'string' || password.length < 8 || Buffer.byteLength(password, 'utf8') > 72
+    ) {
+        return res.status(400).json({ message: 'Nom, email valide et mot de passe de 8 caractères minimum requis.' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ email, password: hashedPassword });
-    await user.save();
+    try {
+        const normalizedEmail = email.trim().toLowerCase();
+        const existingUser = await User.findOne({ email: normalizedEmail });
+        if (existingUser) {
+            return res.status(409).json({ message: 'Un compte existe déjà avec cet email.' });
+        }
 
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
-    res.status(201).json({ token });
+        const hashedPassword = await bcrypt.hash(password, 12);
+        const user = await User.create({
+            name: name.trim(),
+            email: normalizedEmail,
+            password: hashedPassword,
+        });
+        const token = createSessionToken({ id: user.id, role: user.role || 'member' });
+        setSessionCookie(res, token);
+        return res.status(201).json({
+            user: { id: user.id, name: user.name, email: user.email, role: user.role },
+        });
+    } catch (error) {
+        if (typeof error === 'object' && error !== null && 'code' in error && error.code === 11000) {
+            return res.status(409).json({ message: 'Un compte existe déjà avec cet email.' });
+        }
+        throw error;
+    }
 };
 
 // Fonction de connexion
-export const login = async (req: NextApiRequest, res: NextApiResponse) => { 
-    const { email, password } = req.body;
+export const login = async (req: NextApiRequest, res: NextApiResponse) => {
+    const { email, password } = req.body ?? {};
+    if (
+        typeof email !== 'string' ||
+        typeof password !== 'string' ||
+        !password ||
+        Buffer.byteLength(password, 'utf8') > 72
+    ) {
+        return res.status(400).json({ message: 'Email et mot de passe requis.' });
+    }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email: email.trim().toLowerCase() }).select('+password');
     if (!user) {
-        return res.status(400).json({ message: 'Invalid credentials' });
+        return res.status(401).json({ message: 'Email ou mot de passe incorrect.' });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const hasBcryptHash = /^\$2[aby]\$\d{2}\$/.test(user.password);
+    const isMatch = hasBcryptHash
+        ? await bcrypt.compare(password, user.password)
+        : password === user.password;
     if (!isMatch) {
-        return res.status(400).json({ message: 'Invalid credentials' });
+        return res.status(401).json({ message: 'Email ou mot de passe incorrect.' });
     }
 
-    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({ token, role: user.role });
+    if (!hasBcryptHash) {
+        user.password = await bcrypt.hash(password, 12);
+        await user.save();
+    }
+
+    const token = createSessionToken({ id: user.id, role: user.role || 'member' });
+    setSessionCookie(res, token);
+    return res.status(200).json({
+        user: { id: user.id, name: user.name, email: user.email, role: user.role },
+    });
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    await dbConnect();
-
-    if (req.method === 'POST') {
-        if (req.body.action === 'register') {
-            return register(req, res);
-        } else if (req.body.action === 'login') {
-            return login(req, res);
+    try {
+        if (req.method === 'DELETE') {
+            clearSessionCookie(res);
+            return res.status(204).end();
         }
-    }
 
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+        if (req.method !== 'POST') {
+            res.setHeader('Allow', ['POST', 'DELETE']);
+            return res.status(405).end(`Method ${req.method} Not Allowed`);
+        }
+
+        assertAuthConfigured();
+        await dbConnect();
+        if (req.body?.action === 'register') return await register(req, res);
+        if (req.body?.action === 'login') return await login(req, res);
+        return res.status(400).json({ message: 'Action d’authentification invalide.' });
+    } catch (error) {
+        console.error('Authentication API failed:', error);
+        return res.status(500).json({ message: 'Une erreur est survenue. Réessayez plus tard.' });
+    }
 };
 
 export default handler;

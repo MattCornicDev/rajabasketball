@@ -1,39 +1,39 @@
 import dbConnect from '@/lib/mongodb';
 import Article from '@/models/Article';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { requireSession } from '@/lib/auth';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    await dbConnect();
-
     switch (req.method) {
         case 'GET':
             try {
+                await dbConnect();
                 const articles = await Article.find({}).lean();
                 res.status(200).json(articles);
             } catch (error) {
-                if (error instanceof Error) {
-                    res.status(500).json({ message: error.message });
-                } else {
-                    res.status(500).json({ message: 'An unknown error occurred' });
-                }
+                console.error('Article list failed:', error);
+                res.status(500).json({ message: 'Impossible de charger les articles pour le moment.' });
             }
             break;
 
         case 'POST':
             try {
-                const { title, content, authorId } = req.body;
-                if (!title || !content || !authorId) {
-                    return res.status(400).json({ message: 'Title, content, and authorId are required' });
+                const session = requireSession(req, res);
+                if (!session) return;
+                const { title, content } = req.body ?? {};
+                if (typeof title !== 'string' || !title.trim() || typeof content !== 'string' || !content.trim()) {
+                    return res.status(400).json({ message: 'Un titre et un contenu sont requis.' });
                 }
-                const newArticle = new Article(req.body);
-                await newArticle.save();
+                await dbConnect();
+                const newArticle = await Article.create({
+                    title: title.trim(),
+                    content: content.trim(),
+                    authorId: session.id,
+                });
                 res.status(201).json(newArticle);
             } catch (error) {
-                if (error instanceof Error) {
-                    res.status(400).json({ message: error.message });
-                } else {
-                    res.status(500).json({ message: 'An unknown error occurred' });
-                }
+                console.error('Article creation failed:', error);
+                res.status(500).json({ message: 'Impossible de créer cet article pour le moment.' });
             }
             break;
 

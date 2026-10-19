@@ -1,207 +1,142 @@
-import React from 'react';
-import PromoCard from "@/components/PromoCard";
-import VideoCard from "@/components/VideoCard";
-import AsideCard from "@/components/AsideCard";
-import ArticleCard from "@/components/ArticleCard";
 import Image from 'next/image';
-import Header from "@/components/Header";
+import Link from 'next/link';
 
-const Page: React.FC = () => {
-  const promotions = [
-    {
-      imageUrl: "/photos/preparation.jpeg",
-    },
-    {
-      imageUrl: "/photos/dribble.jpeg",
-    },
-    {
-      imageUrl: "/photos/smatch.jpeg",
-    },
-    {
-      imageUrl: "/photos/smatch2.jpeg",
-    },
-    {
-      imageUrl: "/photos/direction/partenariat-school.jpeg",
-    },
-    {
-      imageUrl: "/photos/PHOTO-2025-01-23-15-00-48.jpg",
-    },
-    {
-      imageUrl: "/photos/PHOTO-2025-01-23-15-00-49.jpg",
-    },
-    {
-      imageUrl: "/photos/direction/partenariat-school2.jpeg",
-    },
-  ];
-  const videos = [
-    {
-      iframeUrl:
-        "https://www.youtube.com/embed/HuV-gF7UcAA?si=KftEHXmnP-PPfqXZ",
-      title: "Vidéo d'entrainement",
-      date: "20 janvier 2024",
-    },
-    {
-      iframeUrl:
-        "/videos/Video.mp4",
-      title: "Vidéo de l'académie",
-      date: "23 février 2025",
-    },
-    {
-      iframeUrl:
-        "https://www.youtube.com/embed/e50HuSxlp8A?si=NAo475OtXDLV_4OL",
-      title: "Vidéo d'entrainement",
-      date: "20 janvier 2024",
-    },
-    { 
-      iframeUrl:
-        "https://www.youtube.com/embed/e50HuSxlp8A?si=bcKg1-lsSXL_8nde",
-      title: "Vidéo de l'académie",
-      date: "1 février 2025",
-    },
-  ];
-  const articles = [
-    {
-      title: "Hisoire du club",
-      imageUrl: "/aigle.png",
-      description: "Le Raja Club Athletic de Casablanca est l’un des clubs de basketball les plus emblématiques du Maroc. Héritier d’une tradition sportive riche et d’un palmarès respectable, le Raja Basketball a marqué l’histoire du basket marocain par ses performances, son engagement et sa contribution au développement de ce sport au Maroc.",
-      linkText: "Lire la suite",
-      linkHref: "#",
-    },
-    {
-      title: "Le Maroc, une dynamique croissante dans le domaine du basket-ball",
-      imageUrl: "/videos/bal.mp4",
-      description: "Le Maroc connaît une véritable effervescence dans le domaine du basket-ball ces dernières années. Grâce à des investissements conséquents, des infrastructures modernes et une volonté politique affirmée, le pays se positionne comme un acteur émergent sur la scène africaine et développe des liens solides avec la Basketball Africa League (BAL) et la NBA.",
-      linkText: "Lire la suite",
-      linkHref: "#",
-    }
-  ];
+const highlights = [
+  {
+    image: '/photos/smatch.jpeg',
+    label: 'Jour de match',
+    title: 'Le Raja, toujours au rendez-vous.',
+    description: 'Retrouvez les prochaines rencontres et encouragez les Vert et Blanc.',
+    href: '/calendrier',
+    action: 'Voir le calendrier',
+  },
+  {
+    image: '/photos/preparation.jpeg',
+    label: 'La vie du club',
+    title: 'Une passion qui se transmet.',
+    description: 'Découvrez les actualités, les équipes et les projets qui font vivre le club.',
+    href: '/actualites',
+    action: 'Explorer les actualités',
+  },
+  {
+    image: '/photos/equipements/veste-raja.jpeg',
+    label: 'Boutique officielle',
+    title: 'Portez fièrement nos couleurs.',
+    description: 'Découvrez les équipements et les produits aux couleurs du Raja.',
+    href: '/boutique',
+    action: 'Découvrir la boutique',
+  },
+];
 
+const carouselPhotos = [
+  { image: '/photos/ramadan-moubarak.jpg', alt: 'Une célébration aux couleurs du Raja', caption: 'Une famille, une passion' },
+  { image: '/photos/salle-comble.jpeg', alt: 'La salle du Raja remplie de supporters', caption: 'Tous derrière le Raja' },
+  { image: '/photos/casa-city-finance.png', alt: 'Casablanca, ville du Raja', caption: 'Casablanca' },
+  { image: '/photos/carousel/raja-homme.png', alt: 'Les joueurs du Raja Basketball', caption: 'L’équipe masculine' },
+  { image: '/photos/smatch.jpeg', alt: 'Une rencontre du Raja Basketball', caption: 'La passion du jeu' },
+  { image: '/photos/carousel/equipe-feminine.png', alt: 'Les joueuses du Raja Basketball', caption: 'L’équipe féminine' },
+  { image: '/photos/dribble.jpeg', alt: 'Un joueur en plein dribble', caption: 'Sur le terrain' },
+  { image: '/photos/carousel/street-raja.png', alt: 'Le basketball Raja au cœur de la ville', caption: 'Le Raja dans la ville' },
+  { image: '/photos/preparation.jpeg', alt: 'Les joueurs se préparent pour le match', caption: 'Toujours prêts' },
+];
+
+export default function HomePage() {
   return (
-    <div className="">
-      <h2 className="clignote text-3xl font-bold text-center text-red-500 m-10"></h2>
-      <h6 className="text-md text-center text-black m-10"><Header /></h6>
-      <div className="container mx-auto">
-        <div className="carousel mt-20">
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Ramadan Moubarak
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Salle comble
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Casablanca</span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Cite en Construction
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Casa Finance City
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Des victoires sur le terrain
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">Une famille</span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              La jeunesse au rendez-vous
-            </span>
-          </div>
-          <div className="carousel__face rounded-sm">
-            <span className="title-carousel text-black -mt-5">
-              Street Sport
-            </span>
-          </div>
-        </div>
+    <main>
+      <section className="home-hero">
         <Image
-          src="/photos/casa-city-finance.png"
-          alt="Description de l'image"
-          width={300}
-          height={200}
-          className="mobile-image"
-          style={{ display: "none" }}
+          src="/photos/salle-comble.jpeg"
+          alt="Les supporters réunis autour du Raja Basketball"
+          fill
+          priority
+          sizes="100vw"
+          className="home-hero-image"
         />
-      </div>
-
-      <section className="w-3/4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-20">
-  {videos.map((video, index) => (
-    <div className="video-card" key={index}>
-      <VideoCard
-        iframeUrl={video.iframeUrl}
-        title={video.title}
-        date={video.date}
-      />
-    </div>
-  ))}
-</section>
-
-      <div className="logo-background">
-          <Image
-            src="/logo-raja-background.svg"
-            alt="Logo Raja Athletic Club"
-            width={1000}
-            height={1000}
-          />
+        <div className="home-hero-shade" />
+        <div className="home-hero-content">
+          <p className="home-hero-kicker">Raja Athletic Club · Basketball</p>
+          <h1>Un club.<br />Une ville.<br /><span>Une passion.</span></h1>
+          <p>Le basketball se vit en vert et blanc. Bienvenue dans l’univers du Raja.</p>
+          <div className="home-hero-actions">
+            <Link href="/calendrier" className="button button-primary">Suivre le Raja</Link>
+            <Link href="/a-propos" className="hero-text-link">Découvrir le club <span aria-hidden="true">→</span></Link>
+          </div>
         </div>
+        <span className="hero-side-label" aria-hidden="true">CASABLANCA · DEPUIS 1949</span>
+      </section>
 
-        <div className="w-3/4 mx-auto">
-  <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
-    {promotions.map((promo, index) => (
-      <div className="" key={index}>
-        <PromoCard imageUrl={promo.imageUrl} />
-      </div>
-    ))}
-  </div>
-</div>
+      <section className="home-carousel" aria-labelledby="carousel-title">
+        <div className="carousel-watermark" aria-hidden="true">
+          <Image src="/logo-raja-background.svg" alt="" fill sizes="720px" />
+        </div>
+        <div className="home-carousel-heading">
+          <p className="eyebrow">La passion en images</p>
+          <h2 id="carousel-title">Le Raja, en mouvement.</h2>
+        </div>
+        <div className="carousel-stage">
+          <div className="carousel-ring" role="region" aria-label="Carrousel des images du Raja Basketball" tabIndex={0}>
+            {carouselPhotos.map((photo, index) => (
+              <figure
+                className="carousel-face"
+                key={photo.image}
+                style={{ transform: `rotateY(${index * 40}deg) translateZ(var(--carousel-radius))` }}
+              >
+                <Image src={photo.image} alt={photo.alt} fill sizes="280px" />
+                <figcaption>{photo.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+        <p className="carousel-hint">Survolez les images pour mettre le carrousel en pause</p>
+      </section>
 
-  <div className="mx-auto m-10">
-  <Image src="/photos/rca.jpeg" className="w-full h-40 object-cover" alt="Description" width={300} height={200} />
-  </div>
+      <section className="home-intro page-shell">
+        <div className="home-intro-mark" aria-hidden="true">R</div>
+        <div>
+          <p className="eyebrow">Plus qu’un club</p>
+          <h2 className="page-title">Le Raja, au cœur du jeu.</h2>
+          <p className="page-intro">
+            Héritier d’une grande histoire sportive, le Raja Basketball rassemble joueurs,
+            familles et supporters autour d’une même passion : faire grandir le basket à Casablanca.
+          </p>
+        </div>
+      </section>
 
-      <div className="aside flex flex-col sm:flex-row">
-        <aside className="w-full sm:w-1/4 p-4 mt-4 sm:mt-0 sm:ml-0">
-          <AsideCard
-            title="Nouvel équipement"
-            content="Découvrez nos articles."
-            linkText="Equipementier Majestee"
-            linkHref="https://www.majestee.fr/"
-            imageUrl="/photos/equipements/veste-raja.jpeg"
-          />
-          <AsideCard
-            title="Publicité"
-            content="Pour la journée de l'indépendances !"
-            linkText="En savoir plus"
-            linkHref="#"
-            imageUrl="/photos/exemple.jpg"
-          />
-        </aside>
-        <aside className="w-full sm:w-3/4 lg:w-2/4 p-4 m-0 sm:mt-0 sm:ml-0">
-          {/* Exemple d'utilisation de ArticleCard */}
-          {articles.map((article, index) => (
-            <ArticleCard
-              key={index}
-              title={article.title}
-              imageUrl={article.imageUrl}
-              description={article.description}
-              linkText={article.linkText}
-              linkHref={article.linkHref}
-            />
-          ))}
-        </aside>
-      </div>
-    </div>
+      <section className="home-highlights">
+        <div className="page-shell">
+          <div className="page-heading">
+            <p className="eyebrow">Au rythme du Raja</p>
+            <h2 className="page-title">Vivez le club.</h2>
+            <p className="page-intro">Toutes les façons de suivre, soutenir et découvrir le Raja Basketball.</p>
+          </div>
+          <div className="highlight-grid">
+            {highlights.map((item) => (
+              <article className="highlight-card" key={item.href}>
+                <div className="highlight-image">
+                  <Image src={item.image} alt="" fill sizes="(max-width: 700px) 100vw, 33vw" />
+                </div>
+                <div className="highlight-body">
+                  <p className="eyebrow">{item.label}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <Link href={item.href}>{item.action} <span aria-hidden="true">→</span></Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-community">
+        <div className="home-community-inner">
+          <div>
+            <p className="eyebrow">Vert et blanc, ensemble</p>
+            <h2>La prochaine histoire s’écrit avec vous.</h2>
+            <p>Rejoignez la communauté Raja et restez au plus près de la vie du club.</p>
+          </div>
+          <Link href="/contact" className="button button-primary">Nous contacter</Link>
+        </div>
+      </section>
+    </main>
   );
-};
-
-export default Page;
+}

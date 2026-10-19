@@ -1,126 +1,86 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState, type FormEvent } from 'react';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [notice, setNotice] = useState('');
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [successMessage, setSuccessMessage] = useState('')
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    try {
-      console.log('Sending form:', formData)
-      setSuccessMessage('Message envoyé avec succès !')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    } catch (error) {
-      console.error('Error sending form:', error)
-    } finally {
-      setIsSubmitting(false)
-    }
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const body = `${formData.message}\n\n${formData.name}\n${formData.email}`;
+    const mailto = `mailto:teamtechmanager@aol.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+    setNotice('Votre application de messagerie va s’ouvrir pour envoyer votre message.');
+    window.location.href = mailto;
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Contactez-nous</h1>
-          <p className="text-gray-500">Nous sommes là pour vous aider. N&apos;hésitez pas à nous contacter !</p>
-        </div>
+    <main className="page-shell">
+      <header className="page-heading">
+        <p className="eyebrow">Nous sommes à votre écoute</p>
+        <h1 className="page-title">Parlons Raja.</h1>
+        <p className="page-intro">Une question sur le club, les équipes ou les prochaines rencontres ? Écrivez-nous.</p>
+      </header>
 
-        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
-          {successMessage && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-              {successMessage}
-            </div>
-          )}
+      <div className="contact-layout">
+        <section className="content-card contact-info-card" aria-labelledby="contact-details">
+          <h2 id="contact-details">Coordonnées du club</h2>
+          <p><strong>Téléphone</strong><br /><a href="tel:+212658618726">+212 (0)658-618726</a></p>
+          <p><strong>E-mail</strong><br /><a href="mailto:teamtechmanager@aol.com">teamtechmanager@aol.com</a></p>
+          <p><strong>Siège</strong><br />Complexe Sportif Raja-Oasis<br />Oasis, Casablanca, Maroc</p>
+          <p>Le formulaire ouvre votre application de messagerie. Aucun message n’est transmis avant votre confirmation.</p>
+        </section>
 
-          <div className="mb-6">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Nom complet
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-              placeholder="Votre nom"
-            />
-          </div>
+        <form className="content-card contact-form" onSubmit={handleSubmit}>
+          <label htmlFor="contact-name">Nom complet</label>
+          <input
+            id="contact-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            value={formData.name}
+            onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+            placeholder="Votre nom"
+            required
+          />
 
-          <div className="mb-6">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-              placeholder="votre@email.com"
-            />
-          </div>
+          <label htmlFor="contact-email">Adresse e-mail</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            value={formData.email}
+            onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+            placeholder="vous@exemple.com"
+            required
+          />
 
-          <div className="mb-6">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-              Sujet
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-              placeholder="Sujet de votre message"
-            />
-          </div>
+          <label htmlFor="contact-subject">Sujet</label>
+          <input
+            id="contact-subject"
+            name="subject"
+            type="text"
+            value={formData.subject}
+            onChange={(event) => setFormData({ ...formData, subject: event.target.value })}
+            placeholder="Sujet de votre message"
+            required
+          />
 
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={4}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-              placeholder="Votre message..."
-            />
-          </div>
+          <label htmlFor="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            value={formData.message}
+            onChange={(event) => setFormData({ ...formData, message: event.target.value })}
+            placeholder="Comment pouvons-nous vous aider ?"
+            required
+          />
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
-          </button>
+          {notice && <p className="form-message" role="status">{notice}</p>}
+          <button className="button button-primary" type="submit">Préparer mon e-mail</button>
         </form>
       </div>
-    </div>
-  )
+    </main>
+  );
 }

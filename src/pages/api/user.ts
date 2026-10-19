@@ -1,31 +1,29 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import User from '@/models/User'; // Assurez-vous que le chemin est correct
+import type { NextApiRequest, NextApiResponse } from 'next';
+import User from '@/models/User';
 import dbConnect from '@/lib/mongodb';
+import { requireSession } from '@/lib/auth';
 
-// Fonction pour enregistrer un nouvel utilisateur
-const registerUser = async (req: NextApiRequest, res: NextApiResponse) => {
-    const { email, password, name } = req.body; // Incluez le champ name
-
-    const newUser = new User({
-        email,
-        password, // Assurez-vous de hacher le mot de passe avant de l'enregistrer
-        name, // Ajoutez le champ name ici
-    });
-
-    await newUser.save();
-    res.status(201).json({ message: 'Utilisateur créé avec succès' });
-};
-
-// Handler de l'API
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    await dbConnect(); // Connexion à la base de données
-
-    if (req.method === 'POST') {
-        return registerUser(req, res); // Appel à la fonction d'enregistrement
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    if (req.method !== 'GET') {
+        res.setHeader('Allow', ['GET']);
+        return res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-};
+    try {
+        const session = requireSession(req, res);
+        if (!session) return;
 
-export default handler;
+        await dbConnect();
+        const user = await User.findById(session.id).select('name email role');
+        if (!user) {
+            return res.status(401).json({ message: 'Cette session ne correspond plus à un compte actif.' });
+        }
+
+        return res.status(200).json({
+            user: { id: user.id, name: user.name, email: user.email, role: user.role },
+        });
+    } catch (error) {
+        console.error('User API failed:', error);
+        return res.status(500).json({ message: 'Impossible de charger votre profil pour le moment.' });
+    }
+}
